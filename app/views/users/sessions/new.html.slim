@@ -1,0 +1,16 @@
+/= render "banner_inner_page"
+.bottom-indent
+  .login-wrap
+
+    form.form-container.order-form-container method="post" action=new_user_session_path
+      .row
+        .columns.medium-10.medium-centered.large-8
+          p.title Вхід
+          .row
+            .columns
+              .input-field
+                input type="text" placeholder="Логін" name="user[email]"
+              .input-field
+                input type="password" placeholder="Пароль" name="user[password]"
+            .button-holder
+              button.curved-border-btn type="submit" увійти

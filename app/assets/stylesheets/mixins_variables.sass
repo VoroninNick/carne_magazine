@@ -1,0 +1,156 @@
+=filter($filter-type,$filter-amount)
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})')
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})')
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})')
+  -o-filter: $filter-type+unquote('(#{$filter-amount})')
+  filter: $filter-type+unquote('(#{$filter-amount})')
+
+=grayscale
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale") // Firefox 10+, Firefox on Android
+  filter: gray // IE6-9
+  -webkit-filter: grayscale(100%) // Chrome 19+, Safari 6+, Safari 6+ iOS
+  filter: grayscale(100%)
+
+=disable-grayscale
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale")
+  -webkit-filter: grayscale(0%)
+  filter: grayscale(0%)
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)
+
+//     F O N T S
+
+=light
+  font-weight: 300
+=medium
+  font-weight: 500
+=s-bold
+  font-weight: 600
+=bold
+  font-weight: 700
+=x-bold
+  font-weight: 800
+
+//     C O L O U R S
+
+$blueGrey900: #253137
+$blueGrey800: #36464E
+$blueGrey700: #445963
+$blueGrey600: #536D79
+$blueGrey400: #778F9B
+$blueGrey300: #8FA3AD
+$blueGrey200: #AFBDC4
+$blueGrey100: #CED7DB
+$blueGrey50: #EBEEF0
+
+$grey900: #202020
+$grey800: #414141
+$grey700: #606060
+$grey600: #747474
+$grey400: #BCBCBC
+$grey300: #DFDFDF
+$grey200: #EDEDED
+$grey100: #F4F4F4
+$grey50: #F9F9F9
+
+$brown900: #3D2622
+$brown800: #4D332D
+$brown700: #5C3F36
+$brown600: #6C4B40
+$brown400: #8C6D62
+$brown300: #A0877E
+$brown200: #BBA9A3
+$brown100: #D6CBC7
+$brown50: #EEEAE8
+
+$green: #7bc043
+$dark: #181f2a
+
+//     S T R U C T U R E     M I X I N S
+
+=fullsize
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+
+=centered-inside
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+
+=square
+  content: ''
+  display: block
+  padding-bottom: 100%
+
+=img-container($padding-bottom: 56%)
+  position: relative
+  width: 100%
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  &:before
+    content: ''
+    display: block
+    padding-bottom: $padding-bottom
+
+=x-align
+  position: absolute
+  left: 50%
+  +translate(-50%,0)
+
+=y-align
+  position: absolute
+  top: 50%
+  +translate(0,-50%)
+
+=xy-align
+  position: absolute
+  top: 50%
+  left: 50%
+  +translate(-50%,-50%)
+
+=gradient
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.3))
+
+=padding-top($pt-small, $pt-tablet, $pt, $pt-hd)
+  padding-top: $pt
+  @media #{$small-only}
+    padding-top: $pt-small
+  @media #{$medium-only}
+    padding-top: $pt-tablet
+  @media (min-width: 1920px)
+    padding-top: $pt-hd
+
+=padding-bottom($pb-small, $pb-tablet, $pb, $pb-hd)
+  padding-bottom: $pb
+  @media #{$small-only}
+    padding-bottom: $pb-small
+  @media #{$medium-only}
+    padding-bottom: $pb-tablet
+  @media (min-width: 1920px)
+    padding-bottom: $pb-hd
+
+=dimension-block($width,$height,$inner-padding: 20px)
+  position: relative
+  float: left
+  width: calc(#{$width} - 6px)
+  margin: 3px
+  &:before
+    content: ''
+    display: block
+    padding-bottom: $height
+  .inner
+    +fullsize
+    padding: $inner-padding

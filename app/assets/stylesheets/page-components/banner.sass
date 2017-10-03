@@ -1,0 +1,170 @@
+// banner pn main page
+
+.main-banner-wrap
+  position: relative
+  width: 100%
+  height: 100vh
+  margin-bottom: 50px
+  &.not_found
+    margin-bottom: 0
+
+  .read-more
+    +x-align
+    bottom: -50px
+    padding: 0 20px
+    cursor: pointer
+    span
+      position: absolute
+      top: 15px
+      left: -20px
+      font-size: 12px
+      font-weight: 700
+      color: $green
+      +transition(.25s)
+      +rotate(-90deg)
+      text-transform: uppercase
+      letter-spacing: 2px
+    &:before
+      content: ''
+      display: block
+      width: 2px
+      height: 150px
+      background: $green
+      +transition(.25s)
+    &:hover
+      span
+        color: white
+      &:before
+        background: white
+    @media #{$small-only}
+      bottom: -30px
+      span
+        display: none
+      &:before
+        height: 80px
+
+  .inner-text
+    width: 100%
+    position: relative
+    top: 50%
+    +translate(0,-50%)
+    text-align: center
+
+    .corporate-label
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      margin-bottom: 20px
+      @media #{$small-only}
+        flex-direction: column
+      .abbreviation
+        background: $green
+        position: relative
+        flex-basis: 50%
+        p
+          font-family: 'Segoe'
+          font-size: 72px
+          letter-spacing: 5px
+          color: $dark
+          text-transform: uppercase
+          @media #{$small-only}
+            font-size: 36px
+          @media #{$medium-only}
+            font-size: 32px
+            margin-top: 25px
+      .full-name
+        background: $dark
+        padding: 20px 30px
+        @media #{$small-only}
+          padding: 10px
+        p
+          font-family: 'Segoe'
+          font-size: 24px
+          color: white
+          letter-spacing: 5px
+          text-transform: uppercase
+          @media #{$small-only}
+            font-size: 12px
+          @media #{$medium-only}
+            font-size: 21px
+
+    .regular
+      margin-bottom: 20px
+      color: white
+    .bold
+      color: white
+      text-transform: uppercase
+      font-weight: 700
+      @media #{$small-only}
+        display: none
+    .btn
+      margin-top: 50px
+      @media #{$small-only}
+        margin-top: 20px
+
+
+
+// banner rest pages (inner)
+
+.banner-wrap
+  position: relative
+  height: 80vh
+  text-align: center
+
+  &.with-line
+    &:after
+      content: ''
+      display: block
+      width: 2px
+      height: 80px
+      background: $green
+      bottom: 0
+      +x-align
+
+  .inner
+    width: 100%
+    +xy-align
+    svg
+      fill: $green
+      width: 20px
+      height: 20px
+    .banner-title
+      font-family: 'Segoe'
+      font-size: 60px
+      color: white
+      text-transform: uppercase
+      letter-spacing: 5px
+      line-height: 1
+      margin: 10px auto
+      width: 1200px
+      max-width: 100%
+      @media #{$small-only}
+        font-size: 32px
+      @media screen and (min-width:1920px)
+        font-size: 72px
+  .banner-subtitle
+    font-size: 24px
+    color: white
+
+  &.inside-article
+    .banner-title
+      font-size: 40px
+      @media #{$small-only}
+        font-size: 21px
+      @media screen and (max-width: 320px)
+        font-size: 18px
+      @media screen and (min-width: 1920px)
+        font-size: 48px
+
+  .bottom-holder
+    position: absolute
+    width: 100%
+    bottom: 0
+    left: 0
+    text-align: right
+    .btn
+      +translate(0,50%)
+
+

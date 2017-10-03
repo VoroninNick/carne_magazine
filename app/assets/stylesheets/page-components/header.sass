@@ -1,0 +1,206 @@
+nav.topnav
+  position: fixed
+  width: 100%
+  background: transparent
+  +transition-property(transform)
+  +transition-duration(1s)
+  +translate(0,-100%)
+  z-index: 11
+  &.scrolled, &.visible
+    +translate(0,0)
+
+  .top
+    width: 100%
+    background: white
+    @media #{$small-only}
+      display: none
+    .small
+      color: $blueGrey600
+      text-transform: uppercase
+      padding: 10px 10px 10px 30px
+      a
+        color: black
+        font-weight: 700
+        margin-left: 10px
+        letter-spacing: 2px
+    ul
+      padding: 10px 0
+      margin-right: 10px
+      li
+        display: inline-block
+        position: relative
+        &:after
+          content: ''
+          width: 1px
+          height: 14px
+          background: $blueGrey600
+          position: absolute
+          right: 0
+          top: 5px
+        &:last-child
+          &:after
+            display: none
+        a
+          font-size: 12px
+          color: $blueGrey600
+          text-transform: uppercase
+          padding: 0 20px
+    .toggle-language
+      background: $blueGrey100
+      padding: 13px 20px
+      p
+        font-size: 12px
+        font-weight: 700
+        text-transform: uppercase
+
+  .main
+    position: relative
+    background: $green
+    min-height: 60px
+    .logo-container
+      position: absolute
+      width: 200px
+      height: 100%
+      background: $dark
+      padding: 10px
+      svg
+        width: 100%
+        height: 100%
+        @media #{$small-only}
+          &:first-child
+            display: none
+          &:last-child
+            fill: $green
+        @media #{$medium-up}
+          &:last-child
+            display: none
+      @media #{$small-only}
+        width: 60px
+        padding: 15px
+    .menu-container
+      width: 100%
+      text-align: right
+      padding: 0 10px
+
+      > ul > li > ul
+        min-height: 317px
+
+      & > ul
+        display: none
+        ul
+          display: none
+          position: absolute
+          top: 79px
+          left: 0
+          background: $blueGrey800
+          padding-bottom: 5px
+          padding-right: 300px
+          text-align: left
+          li
+            position: initial
+            display: block
+            width: 300px
+            background: $dark
+            border-bottom: 1px solid $blueGrey800
+            overflow: hidden
+            a
+              position: relative
+              width: 100%
+              font-family: 'Segoe'
+              font-size: 14px
+              background: transparent
+              color: $blueGrey100
+              padding: 10px 30px 10px 20px
+              +translate(-4px,0)
+              +transition(.25s)
+              &:before
+                content: ''
+                display: block
+                position: absolute
+                width: 4px
+                height: 100%
+                top: 0
+                left: 0
+                background: $green
+
+            // examples
+            ul
+              position: absolute
+              top: 0
+              left: 300px
+              width: 300px
+              height: 100%
+              li
+                +fullsize
+                border-bottom: 0
+                background: $blueGrey800
+                &:hover
+                  a
+                    background: $blueGrey800
+                a
+                  padding: 60px
+                  text-align: center
+                  +translate(0,0)
+                  p
+                    margin: 20px 0
+                    color: white
+                    +transition(.25s)
+                  svg
+                    width: 20px
+                    margin: 0 auto
+                    fill: $blueGrey400
+                    +transition(.25s)
+                  &:before
+                    display: none
+                  &:hover
+                    .img-bg
+                      +scale(1.05)
+                    p
+                      color: $green
+                    svg
+                      +translate(5px,0)
+                      fill: white
+            &:hover
+              & > a
+                background: $blueGrey900
+                +translate(0,0)
+                color: $green
+              & > ul
+                display: inherit
+        
+        // menu main list style
+        & > li
+          position: relative
+          display: inline-block
+          vertical-align: middle
+          a
+            font-family: 'Segoe'
+            font-size: 14px
+            color: black
+            text-transform: uppercase
+            padding: 30px 20px
+
+          &:hover
+            & > a
+              background: darken($green,5%)
+              color: white
+            & > ul
+              display: inherit
+
+
+
+      // show menu
+      @media #{$xlarge-up}
+        ul
+          display: block
+
+    .menu-btn
+      position: absolute
+      width: 40px
+      height: 40px
+      top: 15px
+      right: 10px
+      @media #{$small-only}
+        padding: 5px
+      @media #{$xlarge-up}
+        display: none

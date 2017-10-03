@@ -1,0 +1,17 @@
+.main-banner-wrap.not_found
+
+  / .img-bg style="background-image: url(#{asset_path('photo/slider-1.jpg')})"
+  .img-bg style="background-color: black"
+
+  .inner-text
+    .row
+      .columns.medium-8.medium-centered.large-6
+
+        .corporate-label
+          .abbreviation
+            p 404
+          .full-name
+            p = t("not_found.main_text")
+
+        a.btn title=I18n.t("components.logo_html_title") href=root_path
+          = t("components.go_to_mainpage")

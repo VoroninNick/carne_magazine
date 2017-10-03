@@ -1,0 +1,223 @@
+.article-content, .scroll-nav__section
+
+  h1,h2,h3,h4,h5,h6
+    margin: 100px 0 30px
+    letter-spacing: 2px
+    line-height: 1
+    @media #{$small-only}
+      margin: 70px 0 20px
+    &:first-child
+      margin: 50px 0 30px
+      @media #{$small-only}
+        margin: 30px 0
+  &.inside-installation
+    h1,h2,h3,h4,h5,h6
+      text-transform: uppercase
+
+  // & > p
+  p
+    margin-bottom: 20px
+    color: $blueGrey700
+    line-height: 1.875
+    @media #{$small-only}
+      margin-bottom: 16px
+  & > i
+    display: inline-block
+    font-size: 21px
+    color: $dark
+    font-style: italic
+    margin-bottom: 20px
+  i
+    display: block
+    color: $blueGrey700
+    font-style: italic
+    margin-bottom: 20px
+    span
+      font-weight: 700
+      &:before, &:after
+        content: '\00A0'
+  p
+    & > a
+      color: $green
+      font-weight: 700
+      &:before, &:after
+        content: '\00A0'
+    & > a:hover
+      text-decoration: underline
+
+  blockquote
+    position: relative
+    font-size: 30px
+    font-style: italic
+    color: black
+    line-height: 1
+    margin: 50px 0
+    padding-left: 120px
+    &:before
+      content: ''
+      display: block
+      width: 100px
+      height: 2px
+      background: $green
+      position: absolute
+      top: 20px
+      left: 0
+    p
+      font-style: initial
+      font-size: 14px
+      margin-top: 20px
+      letter-spacing: 1px
+      b
+        color: black
+        text-transform: uppercase
+        margin-right: 6px
+        &:after
+          content: '\201A'
+    @media #{$small-only}
+      font-size: 24px
+      text-align: center
+      padding-top: 20px
+      padding-left: 0
+      &:before
+        top: 0
+        +x-align
+        width: 60px
+    @media #{$xlarge-up}
+      font-size: 36px
+
+  img
+    margin: 30px 0
+  .img-holder
+    position: relative
+    p
+      font-size: 12px
+      color: $dark
+      text-transform: uppercase
+      font-weight: 700
+      position: absolute
+      bottom: 30px
+      right: 0
+      padding: 15px 20px
+      background: $green
+      letter-spacing: 1px
+
+  & > ul
+    margin: 40px 0 60px
+    li
+      position: relative
+      font-weight: 700
+      margin: 20px 0
+      color: $blueGrey700
+      @media #{$medium-up}
+        padding-left: 16px
+      &:before
+        content: ''
+        display: block
+        width: 8px
+        height: 2px
+        background: $green
+        position: absolute
+        left: 0
+        top: 10px
+      @media #{$xlarge-up}
+        padding-left: 0
+        &:before
+          left: -16px
+
+  & > ul.vacancies-list
+    li
+      margin: 0
+      &:before
+        display: none
+
+  &.inside-dark-bg
+    h1,h2,h3,h4,h5,h6
+      margin-top: 0
+      color: $green
+    & > p
+      color: white
+    & > i
+      font-size: 18px
+      color: $green
+      font-style: italic
+
+.one-wrap
+  position: relative
+  +padding-top(50px,80px,80px,100px)
+  +padding-bottom(50px,80px,80px,120px)
+  overflow: hidden
+
+.article-head
+  position: relative
+  padding: 30px 0
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    width: 200%
+    height: 100%
+    +translate(-30px,-30px)
+    background: $green
+    z-index: -1
+  .date
+    position: relative
+    color: $dark
+    margin-right: 20px
+  .tag-container
+    display: inline-block
+    margin: 0
+    li
+      background: $dark
+      color: $green
+  .title
+    font-size: 21px
+    color: $dark
+    border-top: 1px solid $dark
+    margin-top: 10px
+    padding: 20px 0
+    line-height: 1.5
+    @media #{$small-only}
+      font-size: 18px
+    @media screen and (min-width: 1920px)
+      font-size: 24px
+
+.constructor-part
+  padding-bottom: 50px
+.table-holder-with-scroll
+  overflow-X: scroll
+  cursor: move
+  cursor: grab
+  cursor: -moz-grab
+  cursor: -webkit-grab
+  img
+    width: initial
+    max-width: none
+  @media #{$small-only}
+    display: none
+
+.donwload-pdf-holder
+  text-align: right
+  margin-top: 50px
+.donwload-pdf-btn
+  position: relative
+  padding: 10px 20px 10px 50px
+  background: $green
+  border: 2px solid $dark
+  color: $dark
+  svg
+    position: absolute
+    width: 20px
+    height: 20px
+    top: 16px
+    left: 20px
+  p
+    margin-bottom: 0
+    line-height: 1.2
+  .name
+    font-size: 14px
+    text-transform: uppercase
+    font-weight: 700
+  &:hover
+    background: white
+.table-holder
+  overflow: scroll

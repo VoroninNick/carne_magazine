@@ -1,0 +1,344 @@
+.popup-wrap
+  position: fixed
+  width: 100%
+  height: 100vh
+  overflow: auto
+  z-index: 11
+  background: white
+  display: none
+  z-index: 12
+  &.opened
+    display: block  
+
+  .close-popup-btn
+    +x-align
+    width: 50px
+    height: 50px
+    top: 0
+    background: $green
+    +transition(.25s)
+    cursor: pointer
+    z-index: 2
+    svg
+      +centered-inside
+      +transition(.25s)
+      width: 14px
+      height: 14px
+    &:hover
+      background: $dark
+      svg
+        fill: $green
+
+  .inner-holder
+    position: relative
+    margin-top: 100px
+    margin-bottom: 100px
+    @media screen and (min-width: 1920px)
+      margin-top: 150px
+      margin-bottom: 150px
+
+  .confirm-container
+    +fullsize
+    background: white
+    opacity: 0
+    pointer-events: none
+    +transition(.5s)
+    .inner-text
+      +centered-inside
+      width: 500px
+      height: 400px
+      max-width: 90%
+      text-align: center
+      @media #{$small-only}
+        height: 300px
+    .title
+      font-family: 'Segoe'
+      font-size: 48px
+      color: black
+      line-height: 1
+      margin-bottom: 30px
+      @media #{$small-only}
+        font-size: 24px
+    .subtitle
+      font-size: 24px
+      color: black
+      margin-bottom: 60px
+      @media #{$small-only}
+        font-size: 18px
+        margin-bottom: 40px
+
+  &.success
+    overflow: initial
+    .confirm-container
+      opacity: 1
+      pointer-events: initial
+
+
+.calculator-wrap
+  position: relative
+  background: $blueGrey50
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.25)
+  h2, h3
+    text-transform: uppercase
+    margin-bottom: 20px
+    letter-spacing: 4px
+    svg
+      margin-left: 20px
+  .calc-error-message
+    position: absolute
+    width: 100%
+    text-align: center
+    color: red
+    bottom: 20px
+    display: none
+    &.visible
+      display: block
+  .inner-padding
+    padding: 40px
+    @media #{$small-only}
+      padding: 40px 20px
+  .smaller
+    margin-bottom: 20px
+    a
+      color: $green
+      font-weight: 700
+  .warning-field
+    position: relative
+    border-top: 1px solid $blueGrey100
+    border-bottom: 1px solid $blueGrey100
+    svg
+      position: absolute
+      top: 20px
+      left: 0
+    p
+      font-size: 14px
+      text-transform: uppercase
+      width: 500px
+      max-width: 100%
+      padding: 20px 0 20px 40px
+  .static-label
+    font-size: 18px
+    font-weight: 700
+    margin: 40px 0 20px
+  .field-label
+    color: $blueGrey600
+    margin-bottom: 10px
+  .input-field
+    position: relative
+    &:after
+      content: 'MM'
+      position: absolute
+      right: 20px
+      top: 24px
+      color: $green
+      font-size: 12px
+  input
+    position: relative
+    width: 100%
+    margin-bottom: 30px
+    height: 64px
+    line-height: 64px
+    padding: 0 20px
+    color: $blueGrey300
+    border: none
+    outline: none
+    font-weight: 700
+    text-transform: uppercase
+    +placeholder($blueGrey300)
+    &.error
+      border: 1px solid red
+  input[type="radio"]
+    display: none
+    & + label
+      cursor: pointer
+    &:checked + label
+      .radio-label
+        background: $dark
+        border: 2px solid transparent
+        .icon
+          background: $green
+        svg
+          fill: $dark
+        p
+          color: $green
+  input[type="number"]
+    -moz-appearance: textfield
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+      -webkit-appearance: none
+  .radio-label
+    position: relative
+    border: 2px solid $blueGrey200
+    margin-bottom: 20px
+    &.error
+      border: 2px solid red
+    .icon
+      position: absolute
+      width: 64px
+      height: 60px
+    svg
+      position: absolute
+      top: 0
+      left: 0
+      margin: 20px
+      fill: $blueGrey200
+    p
+      margin-left: 62px
+      border-left: 2px solid $blueGrey200
+      color: $blueGrey300
+      padding: 20px 0
+      font-weight: 700
+      text-align: center
+      letter-spacing: 1px
+
+  .nice-select
+    margin-bottom: 30px
+    height: 64px
+    line-height: 64px
+    &.error
+      border: 1px solid red
+
+  .btn
+    display: block
+    text-align: center
+    margin-top: 30px
+
+  .result-container
+    position: relative
+    background: $dark
+    padding: 40px
+    display: none
+    &.visible
+      display: block
+    @media #{$small-only}
+      padding: 40px 20px
+    .larger, .small
+      color: $green
+    .small
+      font-weight: 700
+      text-transform: uppercase
+      letter-spacing: 2px
+      cursor: pointer
+      +transition(.25s)
+      span
+        display: inline-block
+        vertical-align: middle
+        margin-right: 10px
+      svg
+        fill: $green
+        +transition(.25s)
+      &:hover
+        color: white
+        svg
+          fill: white
+    table
+      margin: 50px 0
+      td, th
+        padding: 10px 0
+        border: 0
+        border-bottom: 1px dotted $blueGrey700
+        color: white
+        &:nth-child(odd)
+          text-align: left
+        &:nth-child(even)
+          text-align: right
+      p
+        background: $dark
+
+.details-info
+  margin-top: 20px
+  text-align: center
+  p
+    font-size: 13px
+    color: $blueGrey300
+    font-style: italic
+    a
+      font-style: normal
+      color: black
+      font-weight: 700
+      letter-spacing: 2px
+      &:hover
+        color: $green
+
+.vacancie-popup
+  .vacancie-title
+    font-family: 'Segoe'
+    font-size: 48px
+    text-align: center
+    text-transform: uppercase
+    line-height: 1
+    margin-bottom: 40px
+    @media #{$small-only}
+      font-size: 24px
+  .price
+    position: relative
+    text-align: center
+    margin-bottom: 40px
+    padding-bottom: 40px
+    font-size: 18px
+    letter-spacing: 2px
+    color: $blueGrey400
+    text-transform: uppercase
+    &:after
+      content: ''
+      position: absolute
+      width: 60px
+      height: 1px
+      background: $green
+      bottom: 0
+      +x-align
+  .article-content
+    margin-bottom: 80px
+    h2, h3, h4, h5, h6
+      margin: 70px 0 30px
+  ul
+    padding-left: 18px
+    li
+      font-weight: normal
+      &:before
+        width: 4px
+        height: 4px
+        border-radius: 50%
+  .btn-holder
+    .attach-file
+      position: relative
+      width: 100%
+      @media #{$medium-up}
+        display: inline-block
+        width: calc(100% - 200px)
+      .attach-file-btn
+        width: 100%
+        border: 2px dashed $blueGrey200
+        text-align: center
+        svg
+          width: 14px
+          height: 14px
+          fill: $green
+        &.hidden
+          display: none
+      .added-file-field
+        color: $green
+        text-align: left
+        padding-right: 40px
+      .remove-file
+        width: 30px
+        height: 30px
+        position: absolute
+        right: 0
+        top: 0
+        display: none
+        cursor: pointer
+        svg
+          width: 100%
+          height: 100%
+          fill: $green
+          +transition(.25s)
+        &:hover
+          svg
+            fill: $dark
+        &.visible
+          display: block
+    .btn.dark
+      width: 100%
+      @media #{$medium-up}
+        width: 180px
+        margin-left: 20px

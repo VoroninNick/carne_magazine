@@ -1,0 +1,175 @@
+.nice-select {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  background: white;
+  float: left;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: normal;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  letter-spacing: 1px;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap; }
+.nice-select .current {
+  font-weight: bold;
+  color: #8FA3AD;
+  text-transform: uppercase;
+  transition: 0.25s; }
+.nice-select:hover {
+  background: #6faf3b; }
+.nice-select:hover .current {
+  color: white; }
+.nice-select:active, .nice-select.open, .nice-select:focus {
+  border-color: #181f2a; }
+.nice-select:after {
+  border-bottom: 2px solid #8FA3AD;
+  border-right: 2px solid #8FA3AD;
+  content: '';
+  display: block;
+  height: 5px;
+  margin-top: -4px;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  -webkit-transform-origin: 66% 66%;
+      -ms-transform-origin: 66% 66%;
+          transform-origin: 66% 66%;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  width: 5px; }
+  @media screen and (max-width: 640px) {
+    .nice-select:after {
+    right: 20px; }
+  }
+.nice-select:hover:after {
+  border-bottom: 2px solid #253137;
+  border-right: 2px solid #253137; }
+.nice-select.open:after {
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg); }
+.nice-select.open .current {
+  color: white;
+}
+.nice-select.open .list {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: scale(1) translateY(0);
+      -ms-transform: scale(1) translateY(0);
+          transform: scale(1) translateY(0); }
+.nice-select.disabled {
+  border-color: #ededed;
+  color: #999;
+  pointer-events: none; }
+  .nice-select.disabled:after {
+    border-color: #cccccc; }
+.nice-select.wide {
+  width: 100%; }
+  .nice-select.wide .list {
+    left: 0 !important;
+    right: 0 !important; }
+.nice-select.right {
+  float: right; }
+  .nice-select.right .list {
+    left: auto;
+    right: 0; }
+.nice-select.small {
+  font-size: 12px;
+  height: 36px;
+  line-height: 34px; }
+  .nice-select.small:after {
+    height: 4px;
+    width: 4px; }
+  .nice-select.small .option {
+    line-height: 34px;
+    min-height: 34px; }
+.nice-select .list {
+  background-color: #F4F4F4;
+  box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+  box-sizing: border-box;
+  margin-top: 1px;
+  border-bottom: 3px solid #7bc043;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  width: 100% ;
+  left: 0;
+  -webkit-transform-origin: 50% 0;
+      -ms-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: scale(0.75) translateY(-21px);
+      -ms-transform: scale(0.75) translateY(-21px);
+          transform: scale(0.75) translateY(-21px);
+  -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+  transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+  z-index: 9; }
+  @media screen and (max-width: 640px) {
+    .nice-select .list {
+    width: 100%;
+    }
+  }
+  .nice-select .list:hover .option:not(:hover) {
+    background-color: transparent !important; }
+.nice-select .option {
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 40px;
+  list-style: none;
+  width: 100% ;
+  min-height: 40px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 29px;
+  text-align: left;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+  .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+    background-color: #DFDFDF; }
+  .nice-select .option.selected {
+    font-weight: bold; }
+  .nice-select .option.disabled {
+    background-color: transparent;
+    color: #999;
+    cursor: default; }
+
+.no-csspointerevents .nice-select .list {
+  display: none; }
+
+.no-csspointerevents .nice-select.open .list {
+  display: block; }
+
+
+.nice-select.green {
+  background: #7bc043;
+  font-size: 12px;
+  color: #181f2a;
+  width: 100px; }
+.nice-select.green .current{
+  color: #253137; }
+.nice-select.green:after {
+  border-bottom: 2px solid #202020;
+  border-right: 2px solid #202020; }
+.nice-select.green .option {
+  width: 100px; }

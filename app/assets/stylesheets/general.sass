@@ -1,0 +1,60 @@
+html
+  height: 100%
+body
+  min-height: 100%
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  flex-direction: column
+  background: $blueGrey50
+  font-family: 'PT Sans', sans-serif
+  .main-wrapper
+    flex: 1
+  &.hidden
+    overflow: hidden
+
+@each $header, $font-size in (h1: 48px, h2: 30px, h3: 24px, h4: 20px, h5: 18px, h6: 16px)
+  #{$header}, .#{$header}
+    font-size: $font-size
+    font-family: 'Segoe'
+    color: $grey900
+
+.small
+  font-size: 0.75rem
+.smaller
+  font-size: 0.875rem
+.regular
+  font-size: 1rem
+.larger
+  font-size: 1.125rem
+.large
+  font-size: 1.25rem
+
+.date
+  font-size: 12px
+  color: $blueGrey400
+  text-transform: uppercase
+
+.green-link
+  font-size: 12px
+  color: $green
+  font-weight: 700
+  letter-spacing: 2px
+  text-transform: uppercase
+
+.date
+  display: inline-block
+  font-size: 12px
+  color: $blueGrey400
+  font-weight: 700
+  margin-bottom: 10px
+  text-transform: uppercase
+  letter-spacing: 2px
+  span
+    color: $green
+    margin-left: 6px
+    &:before
+      content: '|'
+      margin-right: 6px
