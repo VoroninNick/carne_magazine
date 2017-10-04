@@ -5,7 +5,8 @@
     |magazine
   .number
     |#1
-  .issue-date
-    = @issue_date.strftime("%B %Y")
+  - if @issue_date
+    .issue-date
+      = @issue_date.strftime("%B %Y")
 
 

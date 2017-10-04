@@ -1,0 +1,28 @@
+- count = articles.count rescue 0
+- if count > 0
+.home-articles
+  .section-title
+    |What's inside
+  .rect-container
+    .row.rect-container-row.collapse
+      .columns.large-6
+        = render "rect", style: :large_square, resource: articles[0]
+      - if count > 1
+        .columns.large-3
+          = render "rect", style: :small_square, resource: articles[1]
+          = render "rect", style: :small_square, resource: articles[2]
+      - if count > 3
+        .columns.large-3
+          = render "rect", style: :tall, resource: articles[3]
+      - if count > 4
+        .columns.large-3
+          = render "rect", style: :small_square, resource: articles[4]
+          = render "rect", style: :small_square, resource: articles[5]
+      - if count > 6
+        .columns.large-3
+          = render "rect", style: :tall, resource: articles[6]
+      - if count > 7
+        .columns.large-6
+          = render "rect", style: :large_square, resource: articles[7]
+
+

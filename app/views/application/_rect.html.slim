@@ -1,0 +1,21 @@
+- image_url = resource.image.url(style)
+.rect-outer class="rect-#{style}"
+  .rect
+    .rect-bg style="background-image: url('#{image_url}')"
+      img src=image_url
+
+
+    a.rect-inner href=resource.url
+      .description-block
+        - if resource.category
+          .category
+            = "#{resource.category.name}:"
+        .name
+          = resource.name
+        .author
+          |by:
+          span.author-name
+            = resource.author_name
+          |,
+          .author-description
+            = resource.author_description
