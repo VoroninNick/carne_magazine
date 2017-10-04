@@ -1,0 +1,31 @@
+.main-banner
+  .main-banner-bg style="background-image: url('#{asset_path("banners/main1.jpg")}')"
+  .banner-content-wrap
+    .row
+      .columns
+        .banner-content
+          .main-featured-article
+            - if @main_banner_article.category
+              .article-category
+                = @main_banner_article.category.name
+            .article-name
+              = @main_banner_article.name
+            .author
+              |by
+              span.author-name
+                = @main_banner_article.author_name
+              - if @main_banner_article.author_description.present?
+                |, #{@main_banner_article.author_description}
+
+          .featured-articles-block
+            .outer-separator
+            .inner-separator
+            .featured-articles
+              - @main_banner_articles.each do |article|
+                a.article href=article.url
+                  .article-category
+                    = article.category.try{|c| c.name + ":" }
+                  .article-name
+                    = article.name
+                  .arrow-icon
+                    = embedded_svg_from_assets("svg/arrow-right")

@@ -28,11 +28,15 @@ class Article < ActiveRecord::Base
   define_resource_methods :get, :url, :formatted_release_date
 
   def self.base_url(locale = I18n.locale)
-    Cms.url_helpers.send("articles_#{locale}_path")
+    Cms.url_helpers.send("articles_#{locale}_path") rescue Cms.url_helpers.send("articles_path")
   end
 
   before_save :init_release_date
   def init_release_date
     self.release_date = self.created_at if self.release_date.blank?
+  end
+
+  def category
+    article_category
   end
 end

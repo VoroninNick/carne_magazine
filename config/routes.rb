@@ -10,5 +10,10 @@ Rails.application.routes.draw do
     root action: "index"
   end
 
+  scope :articles, controller: :articles do
+    root action: :index, as: :articles
+    get "id", as: :article, action: :show
+  end
+
   match "*url", to: "application#render_not_found", via: :all
 end
