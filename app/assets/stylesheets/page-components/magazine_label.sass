@@ -1,0 +1,26 @@
+.magazine-label
+  position: fixed
+  right: 35px
+  top: 30px
+  z-index: 10
+  text-align: right
+
+  .magazine-name
+    text-transform: uppercase
+    +bold
+    color: $white-color
+    text-align: right
+    line-height: 1
+  .number
+    background: $white-color
+    color: $blue-color
+    padding: 2px 8px
+    display: inline-block
+    margin: 10px 0 2px 0
+  .issue-date
+    //transform: rotate(90deg)
+    +transform(rotate(270deg) translateX(-50%) translateY(33px))
+    color: rgba($white-color, 0.25)
+    text-transform: uppercase
+    font-size: 10px
+    +light
