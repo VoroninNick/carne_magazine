@@ -6,6 +6,10 @@ class PagesController < ApplicationController
     @main_banner_article = @articles.find(2)
     @main_banner_articles = Article.limit(4)
     @issue_date = @articles.first.release_date
+    @featured_articles = Article.published.order("id desc").limit(3)
+    @article1 = @featured_articles[0]
+    @article2 = @featured_articles[1]
+    @article3 = @featured_articles[2]
   end
 
 end

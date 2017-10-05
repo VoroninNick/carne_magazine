@@ -1,0 +1,19 @@
+.article-1.inline-article
+  .row
+    .columns.large-6
+      .image.bg-image style="background-image: url('#{asset_path("articles/1.png")}')"
+        img src=asset_path("articles/1.png")
+    .columns.large-6
+      .article-content-block
+        .article-label
+          |Article #{number}
+        .article-title
+          = article.name
+        .article-content
+          = raw article.content
+        .article-author
+          .author-name
+            = article.author_name
+          .author-description
+            = article.author_description
+        .share-block
