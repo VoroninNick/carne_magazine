@@ -9,7 +9,7 @@ body
   display: flex
   flex-direction: column
   background: $blueGrey50
-  font-family: 'PT Sans', sans-serif
+  +body-font-family
   .main-wrapper
     flex: 1
   &.hidden
@@ -18,7 +18,7 @@ body
 @each $header, $font-size in (h1: 48px, h2: 30px, h3: 24px, h4: 20px, h5: 18px, h6: 16px)
   #{$header}, .#{$header}
     font-size: $font-size
-    font-family: 'Segoe'
+    +header-font-family
     color: $grey900
 
 .small
