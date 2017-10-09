@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @featured_articles = Article.published.order("id desc").limit(3)
     @article1 = @featured_articles[0]
     @article2 = @featured_articles[1]
-    @article3 = @featured_articles[2]
+    @article3 = Article.find(5)
   end
 
 end

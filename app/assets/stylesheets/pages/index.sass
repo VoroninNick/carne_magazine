@@ -145,6 +145,7 @@
 
 
 
+
   .article-author
     margin: 60px 0 0 0
 
@@ -153,7 +154,12 @@
     background: $extra-dark-blue-color
 
     .author-name
-      color: rgba($white-color, 0.3)
+      color: #615c86
+
+    .share-block
+      .share-block-inner-separator, .share-block-outer-separator
+        background: #615c86
+
 
 
   &.light-bg
@@ -197,12 +203,14 @@
 
 .article-2
   padding-top: 0
-  background: $white-color
+  background: white
 
   .article-content
 
 .article-3
-  background: $white-color
+  background: white
+
+
 
 .article-video
   position: relative
@@ -245,8 +253,24 @@
 .advert-1
   margin-top: 170px
 
+
+
 .share-block
   margin: 0 0 130px 0
+
+  .share-block-inner-separator
+    width: 100%
+    background: #e5e5e5
+    height: 4px
+    margin: 40px 0
+
+  .share-block-outer-separator
+    position: absolute
+    right: 0
+    width: 335px
+    height: 4px
+    background: #e5e5e5
+    margin: 0
 
   .share-block-title
     vertical-align: top
@@ -270,3 +294,5 @@
       *
         fill: $sky-blue-color
 
+.article-video
+  margin: 90px 0

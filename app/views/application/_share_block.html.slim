@@ -1,4 +1,6 @@
 .share-block
+  .share-block-outer-separator
+  .share-block-inner-separator
   p.share-block-title Share this article on:
   ul.socials
     - Cms::Helpers::SocialHelper.get_share_links(nil, resource.url, resource.name, [:facebook, :twitter, :linkedin, :email]).each_pair do |key, value|
