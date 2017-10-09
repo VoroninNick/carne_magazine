@@ -1,14 +1,8 @@
 $document.on "scrolldelta", (e)->
   scroll_top = $("body").scrollTop() || $("html").scrollTop() || $window.scrollTop()
   scroll_bottom = scroll_top + window.innerHeight
-  $blocks = $(".light-bg, .dark-bg")
-  $block = $blocks.filter(
-    ()->
-      $b = $(this)
-      block_top = $b.offset().top
-      block_bottom = block_top + $b.height()
-      block_top >= scroll_top #&& block_bottom <= scroll_bottom
-  )
+
+  $block = get_current_color_block()
 
   console.log "scrolldelta: block length: ", $block.length
 
@@ -23,6 +17,17 @@ $document.on "scrolldelta", (e)->
   else
     if $label.hasClass("dark")
       $label.removeClass("dark")
+
+
+get_current_color_block = ()->
+  $blocks = $(".light-bg, .dark-bg")
+  $blocks.filter(
+    ()->
+      $b = $(this)
+      block_top = $b.offset().top
+      block_bottom = block_top + $b.height()
+      block_top >= scroll_top #&& block_bottom <= scroll_bottom
+  )
 
 
 $document.on "click", ".sidebar-navigation .item:not(.active)", (e)->
