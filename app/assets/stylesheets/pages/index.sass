@@ -46,7 +46,7 @@
 
   .outer-separator
     position: absolute
-    left: -45px
+    left: -#{$sidebar-width}
     width: 300px
     height: 4px
     background: $sky-blue-color
@@ -106,13 +106,43 @@
     padding: 5px 15px
     background: $white-color
     color: $extra-dark-blue-color
+    margin-bottom: 40px
+    text-transform: uppercase
+
+  .article-intro-line
+    background: $sky-blue-color
+    height: 4px
+    margin: 55px 0
+    width: 250px
+    max-width: 100%
+
+  .article-intro
+    color: $sky-blue-color
+    font-size: 40px
+    margin-bottom: 90px
+
+
+  .article-category
+    +light
+    font-size: 65px
+    text-transform: uppercase
+    padding: 5px 15px
+
   .article-title
-    font-size: 50px
+    font-size: 100px
+    +light
+    text-transform: uppercase
+    line-height: 1
+    margin-bottom: 100px
+
+
   .article-content
+
 
 
   .article-author
     margin: 60px 0 0 0
+
 
   &.dark-bg
     background: $extra-dark-blue-color
@@ -122,10 +152,35 @@
 
 
   &.light-bg
+    color: $extra-dark-blue-color
+
+.article-banner-image
+  width: calc(100% - #{$sidebar-width})
+  padding-bottom: 50%
+  margin: 0 0 0 45px
+  position: absolute
+  background-size: cover
+  background-repeat: no-repeat
+
+
+.article-banner-content
+  position: relative
+  padding-top: 25%
+  color: $white-color
+
+  .article-label
+    margin-bottom: 60px
+
+  .article-title
+    font-weight: 700
+    font-size: 180px
+    line-height: 0.9
+
+  .article-category
+    padding-left: 0
 
 
 .article-1
-
   .bg-image
     //background-size: cover
     background: none !important
@@ -134,3 +189,73 @@
 
   .share-block
     margin: 160px 0 0 0
+
+.article-2
+  padding-top: 0
+
+  .article-content
+
+.article-video
+  position: relative
+  .iframe-wrap
+    padding-top: 60%
+    display: none
+  iframe
+    top: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 100%
+    position: absolute
+  .image
+    background-size: cover
+    background-repeat: no-repeat
+    padding-top: 60%
+  .video-play-button
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: -90px 0 0 -90px
+    cursor: pointer
+    svg
+      stroke: white
+      width: 180px
+      height: 180px
+
+    &:hover
+      svg
+        stroke: $sky-blue-color
+
+  &.active
+    .iframe-wrap
+      display: block
+    .video-controls-panel
+      display: none
+
+
+.advert-1
+  margin-top: 170px
+
+.share-block
+  margin: 0 0 130px 0
+
+  .share-block-title
+    vertical-align: top
+    text-transform: uppercase
+    display: inline-block
+    margin: 10px 14px
+
+  .socials
+    display: inline-block
+    li
+      display: inline-block
+
+
+  .share-link
+    svg
+      width: 50px
+      height: 50px
+
+      *
+        fill: $sky-blue-color
+

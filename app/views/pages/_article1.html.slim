@@ -1,8 +1,8 @@
-.article-1.inline-article.dark-bg
+.article-1.inline-article.dark-bg data-navigation-key="article-#{number}"
   .row
     .columns.large-6
-      .image.bg-image style="background-image: url('#{asset_path("articles/1.png")}')"
-        img src=asset_path("articles/1.png")
+      .image.bg-image style="background-image: url('#{asset_path("articles/person.png")}')"
+        img src=asset_path("articles/person.png")
     .columns.large-6
       .article-content-block
         .article-label
@@ -16,4 +16,4 @@
             = article.author_name
           .author-description
             = article.author_description
-        .share-block
+        = render "share_block", resource: @article1

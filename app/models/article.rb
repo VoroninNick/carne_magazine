@@ -39,4 +39,16 @@ class Article < ActiveRecord::Base
   def category
     article_category
   end
+
+  def frame_video_url
+    ApplicationHelper.frame_video_url(self)
+  end
+
+  def video_url
+    ApplicationHelper.video_url(self)
+  end
+
+  def youtube_video_id
+    "X9p56wSzsPA"
+  end
 end

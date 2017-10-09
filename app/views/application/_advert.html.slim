@@ -1,4 +1,6 @@
-.advert
+- if !defined?(number)
+  - number = nil
+.advert.dark-bg class=("advert-#{number}" if number)
   a.link href="#"
     .label
       |Advertisement

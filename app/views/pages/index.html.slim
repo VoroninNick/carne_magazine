@@ -1,6 +1,8 @@
 = render "application/main_banner"
 = render "home_articles", articles: @articles
-= render "advert", image_url: asset_path("adv/1.jpg")
+= render "advert", image_url: asset_path("adv/1.jpg"), number: 1
 = render "pages/article1", article: @article1, number: 1
 = render "pages/article2", article: @article2, number: 2
+= render "advert", image_url: asset_path("adv/2.jpg"), number: 2
 = render "pages/article3", article: @article3, number: 3
+= render "advert", image_url: asset_path("adv/3.jpg"), number: 3
