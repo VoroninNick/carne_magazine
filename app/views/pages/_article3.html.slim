@@ -1,67 +1,68 @@
 .article-2.inline-article.light-bg data-navigation-key="article-#{number}"
-  .article-banner-image style="background-image: url('#{asset_path("articles/article_3/banner.jpg")}')"
+  .inline-article-inner
+    .article-banner-image style="background-image: url('#{asset_path("articles/article_3/banner.jpg")}')"
 
-  .article-banner-content.row
-    .columns
-      .article-label
-        |Article #{number}
-      - if article.category.try(:name).present?
-        .article-category
-          = article.category.name
-      .article-title
-        = article.name
-      .article-intro-line
-      .article-intro
-        |The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
+    .article-banner-content.row
+      .columns
+        .article-label
+          |Article #{number}
+        - if article.category.try(:name).present?
+          .article-category
+            = article.category.name
+        .article-title
+          = article.name
+        .article-intro-line
+        .article-intro
+          |The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
 
-  .row.article-content
-    .columns.large-6
-      .row
-        .columns.large-10
-          .author
-            .author-image
-            .author-description
-              |by
-              .author-name
-                |Steve Bernat
+    .row.article-content
+      .columns.large-6
+        .row
+          .columns.large-10
+            .author
+              .author-image
               .author-description
-                |Carne Luxembourg
+                |by
+                .author-name
+                  |Steve Bernat
+                .author-description
+                  |Carne Luxembourg
 
 
-            h3
-              |Dog
+              h3
+                |Dog
+              p
+                |The domestic dog (Canis lupus familiaris or Canis familiaris) is a member of genus Canis (canines) that forms part of the wolf-like canids, and is the most widely abundant carnivore. The dog and the extant gray wolf are sister taxa,[10][11] with modern wolves not closely related to the wolves that were first domesticated,[10][11] which implies that the direct ancestor of the dog is extinct.[12] The dog was the first domesticated species[11][13] and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.
+          .columns
+            .image
+              img src=asset_path("articles/article_3/image_1.jpg")
+              .image-description-block
+                b
+                  |Bill Blackwell,&thinsp;&thinsp;
+                |Carne London
+          .columns.large-10.end
             p
-              |The domestic dog (Canis lupus familiaris or Canis familiaris) is a member of genus Canis (canines) that forms part of the wolf-like canids, and is the most widely abundant carnivore. The dog and the extant gray wolf are sister taxa,[10][11] with modern wolves not closely related to the wolves that were first domesticated,[10][11] which implies that the direct ancestor of the dog is extinct.[12] The dog was the first domesticated species[11][13] and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.
-        .columns
-          .image
-            img src=asset_path("articles/article_3/image_1.jpg")
-            .image-description-block
-              b
-                |Bill Blackwell,&thinsp;&thinsp;
-              |Carne London
-        .columns.large-10.end
-          p
-            |New research seems to show that the dog's high sociability may be affected by "the same genes as in humans."[15][16] Their long association with humans has led dogs to be uniquely attuned to human behavior[17] and they are able to thrive on a starch-rich diet that would be inadequate for other canid species.[18] Dogs vary widely in shape, size and colours.[19] Dogs perform many roles for people, such as hunting, herding, pulling loads, protection, assisting police and military, companionship and, more recently, aiding handicapped individuals and therapeutic roles. This influence on human society has given them the sobriquet "man's best friend".
+              |New research seems to show that the dog's high sociability may be affected by "the same genes as in humans."[15][16] Their long association with humans has led dogs to be uniquely attuned to human behavior[17] and they are able to thrive on a starch-rich diet that would be inadequate for other canid species.[18] Dogs vary widely in shape, size and colours.[19] Dogs perform many roles for people, such as hunting, herding, pulling loads, protection, assisting police and military, companionship and, more recently, aiding handicapped individuals and therapeutic roles. This influence on human society has given them the sobriquet "man's best friend".
 
 
 
-    .columns.large-6.large-push-1
-      .row
-        .columns
-          .image
-            img src=asset_path("articles/article_3/image_2.jpg")
-        .columns.large-10.float-left
-          p
-            |The term "domestic dog" is generally used for both domesticated and feral varieties. The English word dog comes from Middle English dogge, from Old English docga, a "powerful dog breed".[20] The term may possibly derive from Proto-Germanic *dukkōn, represented in Old English finger-docce ("finger-muscle").[21] The word also shows the familiar petname diminutive -ga also seen in frogga "frog", picga "pig", stagga "stag", wicga "beetle, worm", among others.[22] Piotr Gąsiorowski has suggested that Old English *docga is actually derived from Old English colour adjective dox.
+      .columns.large-6.large-push-1
+        .row
+          .columns
+            .image
+              img src=asset_path("articles/article_3/image_2.jpg")
+          .columns.large-10.float-left
+            p
+              |The term "domestic dog" is generally used for both domesticated and feral varieties. The English word dog comes from Middle English dogge, from Old English docga, a "powerful dog breed".[20] The term may possibly derive from Proto-Germanic *dukkōn, represented in Old English finger-docce ("finger-muscle").[21] The word also shows the familiar petname diminutive -ga also seen in frogga "frog", picga "pig", stagga "stag", wicga "beetle, worm", among others.[22] Piotr Gąsiorowski has suggested that Old English *docga is actually derived from Old English colour adjective dox.
 
-          p
-            |In 14th-century England, hound (from Old English: hund) was the general word for all domestic canines, and dog referred to a subtype of hound, a group including the mastiff. It is believed this "dog" type was so common, it eventually became the prototype of the category "hound".[24] By the 16th century, dog had become the general word, and hound had begun to refer only to types used for hunting.[25] The word "hound" is ultimately derived from the Proto-Indo-European word *kwon-, "dog".[26] This semantic shift may be compared with in German, where the corresponding words Dogge and Hund kept their original meanings. The term *ḱwon- may ultimately derive from the earliest layer of Proto-Indo-European vocabulary.
+            p
+              |In 14th-century England, hound (from Old English: hund) was the general word for all domestic canines, and dog referred to a subtype of hound, a group including the mastiff. It is believed this "dog" type was so common, it eventually became the prototype of the category "hound".[24] By the 16th century, dog had become the general word, and hound had begun to refer only to types used for hunting.[25] The word "hound" is ultimately derived from the Proto-Indo-European word *kwon-, "dog".[26] This semantic shift may be compared with in German, where the corresponding words Dogge and Hund kept their original meanings. The term *ḱwon- may ultimately derive from the earliest layer of Proto-Indo-European vocabulary.
 
-          p
-            |A male canine is referred to as a "dog", while a female is traditionally called a "bitch" (derived from Middle English bicche, from Old English bicce, ultimately from Old Norse bikkja. Since the word "bitch" has taken on derogatory connotations, nowadays it is less commonly used to refer to dogs).[citation needed] The father of a litter is called the sire, and the mother is called the dam. The process of birth is "whelping", from the Old English word hwelp; the modern English word "whelp" is an alternative term for puppy.[28] A litter refers to the multiple offspring at one birth which are called puppies or pups from the French poupée, "doll", which has mostly replaced the older term "whelp".
+            p
+              |A male canine is referred to as a "dog", while a female is traditionally called a "bitch" (derived from Middle English bicche, from Old English bicce, ultimately from Old Norse bikkja. Since the word "bitch" has taken on derogatory connotations, nowadays it is less commonly used to refer to dogs).[citation needed] The father of a litter is called the sire, and the mother is called the dam. The process of birth is "whelping", from the Old English word hwelp; the modern English word "whelp" is an alternative term for puppy.[28] A litter refers to the multiple offspring at one birth which are called puppies or pups from the French poupée, "doll", which has mostly replaced the older term "whelp".
 
 
 
-  .row
-    .columns.large-5.float-right
-      = render "share_block", resource: @article3
+    .row
+      .columns.large-5.float-right
+        = render "share_block", resource: @article3

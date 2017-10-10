@@ -1,19 +1,20 @@
 .article-1.inline-article.dark-bg data-navigation-key="article-#{number}"
-  .row
-    .columns.large-6
-      .image.bg-image style="background-image: url('#{asset_path("articles/person.png")}')"
-        img src=asset_path("articles/person.png")
-    .columns.large-6
-      .article-content-block
-        .article-label
-          |Article #{number}
-        .article-title
-          = article.name
-        .article-content
-          = raw article.content
-        .article-author
-          .author-name
-            = article.author_name
-          .author-description
-            = article.author_description
-        = render "share_block", resource: @article1
+  .inline-article-inner
+    .row
+      .columns.large-6
+        .image.bg-image style="background-image: url('#{asset_path("articles/person.png")}')"
+          img src=asset_path("articles/person.png")
+      .columns.large-6
+        .article-content-block
+          .article-label
+            |Article #{number}
+          .article-title
+            = article.name
+          .article-content
+            = raw article.content
+          .article-author
+            .author-name
+              = article.author_name
+            .author-description
+              = article.author_description
+          = render "share_block", resource: @article1

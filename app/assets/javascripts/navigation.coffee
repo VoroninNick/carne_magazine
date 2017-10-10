@@ -29,7 +29,7 @@ window.get_current_color_block = ()->
       block_bottom = block_top + $b.outerHeight()
       label_bottom = 150
       block_top <= scroll_top && block_bottom >= scroll_top + label_bottom
-  )
+  ).last()
 
 
 $document.on "click", ".sidebar-navigation .item:not(.active)", (e)->

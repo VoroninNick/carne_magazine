@@ -1,5 +1,6 @@
 .main-banner
   height: 100vh
+  overflow-x: hidden
 
   .main-banner-bg
     position: absolute
@@ -88,9 +89,30 @@
 
       &:hover
         color: $sky-blue-color
+
+
+  +breakpoint(large down)
+    .banner-content-wrap
+      margin: 0
+
+  +breakpoint(small only)
+    .main-featured-article
+      .article-name
+        font-size: 40px
+
+      .author
+        font-size: 14px
+
+    .featured-articles-block
+      display: none
+
+    .banner-content-wrap
+      padding: 120px 0 0 0
+
 .home-articles
   background: #fff
   padding: 230px 0 170px 0
+  overflow-x: hidden
 
   .section-title
     text-align: center
@@ -100,9 +122,15 @@
     line-height: 1
     margin-bottom: 0
 
+  +breakpoint(small only)
+    padding: 45px 0 15px 0
+    .section-title
+      font-size: 36px
+
 .inline-article
   padding: 140px 0 0 0
   color: $white-color
+  overflow-x: hidden
 
   .article-content-block
     padding: 110px 0 0 0
@@ -204,6 +232,23 @@
   .share-block
     margin: 160px 0 64px 0
 
+  +breakpoint(small only)
+    padding-top: 30px
+    .image
+      display: none
+
+    .article-content-block
+      padding-top: 0
+
+    .article-label
+      margin-bottom: 15px
+
+    .article-title
+      font-size: 42px
+      margin-bottom: 15px
+
+
+
 .article-2
   padding-top: 0
   background: white
@@ -212,6 +257,32 @@
 
 .article-3
   background: white
+
+.inline-article
+  +breakpoint(small only)
+    position: relative
+    max-height: 800px
+    overflow: hidden
+
+    .article-banner-image
+      margin: 0
+      width: 100%
+      padding: 100% 0 0 0
+
+    .article-banner-content
+      .article-label
+        margin: 0 0 20px 0
+      .article-category
+        font-size: 24px
+
+      .article-title
+        font-size: 40px
+
+      .article-intro-line
+        margin: 55px 0 20px 0
+
+      .article-intro
+        font-size: 18px
 
 
 
