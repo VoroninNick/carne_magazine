@@ -4,7 +4,10 @@
 #= require global
 #= require images
 
-#= require jquery.scrolldelta
+#= require plugins/jquery.scrolldelta
 
 #= require video
 #= require navigation
+
+
+#= require header
