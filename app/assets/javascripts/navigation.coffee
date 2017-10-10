@@ -1,6 +1,5 @@
 $document.on "scrolldelta", (e)->
-  scroll_top = $("body").scrollTop() || $("html").scrollTop() || $window.scrollTop()
-  scroll_bottom = scroll_top + window.innerHeight
+
 
   $block = get_current_color_block()
 
@@ -19,14 +18,17 @@ $document.on "scrolldelta", (e)->
       $label.removeClass("dark")
 
 
-get_current_color_block = ()->
+window.get_current_color_block = ()->
   $blocks = $(".light-bg, .dark-bg")
+  scroll_top = $("body").scrollTop() || $("html").scrollTop() || $window.scrollTop()
+  scroll_bottom = scroll_top + window.innerHeight
   $blocks.filter(
     ()->
       $b = $(this)
       block_top = $b.offset().top
-      block_bottom = block_top + $b.height()
-      block_top >= scroll_top #&& block_bottom <= scroll_bottom
+      block_bottom = block_top + $b.outerHeight()
+      label_bottom = 150
+      block_top <= scroll_top && block_bottom >= scroll_top + label_bottom
   )
 
 
