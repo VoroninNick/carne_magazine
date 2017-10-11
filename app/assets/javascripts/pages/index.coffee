@@ -95,3 +95,21 @@ $rect_container.on "appear", (event, $all_appeared_elements)->
 $rect_container.on "disappear", (event, $all_appeared_elements)->
   window.home_articles_appeared = false
 ###
+
+
+window.animate_article_text = ($article)->
+  tl = new TimelineLite
+  article_selector = '.' + $article.attr("data-navigation-key")
+  article_selector = ".article-1"
+  tl.set(article_selector,  {visibility:"visible"})
+  tl.from(".article-title", 0.5, {opacity: 0}, {opacity: 1})
+  tl.staggerFromTo(".socials .share-link", 0.5, {scale: 0, rotation: -180}, {rotation: 0, scale: 1}, 0.1)
+
+
+$inline_articles = $(".inline-article").appear()
+$inline_articles.on "appear", (event, $all_appeared_elements)->
+  $article = $all_appeared_elements.first()
+  return if $article.data("appeared")
+  $article.data("appeared", true)
+  animate_article_text($article)
+
