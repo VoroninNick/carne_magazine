@@ -6,8 +6,11 @@
         .banner-content
           .main-featured-article
             - if @main_banner_article.category
-              .article-category
-                = @main_banner_article.category.name
+              .article-category.animated-button
+                .bg
+                .bg2
+                .content
+                  = @main_banner_article.category.name
             /.article-name
               = @main_banner_article.name
 

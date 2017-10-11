@@ -136,6 +136,16 @@ $sidebar-width: 45px
   bottom: 0
   background: linear-gradient(to bottom, transparent, transparent, rgba(0,0,0,0.3))
 
+= linear-gradient($config)
+  $v: unquote($config)
+  background: -moz-linear-gradient($v) /* FF3.6-15 */
+  background: -webkit-linear-gradient($v) /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient($v) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+= ie-gradient($color1, $color2)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color1}', endColorstr='#{$color2}',GradientType=0 ) /* IE6-9 */
+
+
 =padding-top($pt-small, $pt-tablet, $pt, $pt-hd)
   padding-top: $pt
   @media #{$small-only}

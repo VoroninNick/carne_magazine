@@ -1,3 +1,23 @@
+.animated-button
+  position: relative
+
+  .bg, .bg2
+    height: 100%
+    position: absolute
+    width: 0
+    left: 0
+    top: 0
+
+  .bg
+    background: #1e4272
+  .bg2
+    background: $white-color
+
+  .content
+    //background: red
+    position: relative
+
+
 .main-banner
   height: 100vh
   overflow-x: hidden
@@ -19,21 +39,25 @@
   .main-featured-article
     .article-category
       color: $blue-color
-      background: $white-color
       +bold
       text-transform: uppercase
       display: inline-block
       padding: 5px 15px
       font-size: 12px
+      position: relative
+      //background: green
+
 
 
     .article-name
       color: $white-color
       //font-size: 80px
       font-size: 120px
+      font-size: 103px
       text-transform: uppercase
       margin: 30px 0 0 0
       line-height: 0.9
+
 
     .author
       color: $sky-blue-color
@@ -61,6 +85,7 @@
     background: $sky-blue-color
     height: 4px
     margin: 40px 0
+    opacity: 0
 
 
   .featured-articles
@@ -91,6 +116,28 @@
         color: $sky-blue-color
 
 
+  +breakpoint(large up)
+    background: #27618f
+
+    .main-featured-article
+      .article-category
+        .bg
+          width: 0
+
+    .main-banner-bg
+      opacity: 0
+      +transition-property(opacity)
+      +transition-duration(0.5s)
+
+    .article
+      opacity: 0
+
+    &.animated
+      .main-banner-bg
+        opacity: 1
+
+
+
   +breakpoint(large down)
     .banner-content-wrap
       margin: 0
@@ -99,6 +146,7 @@
     .main-featured-article
       .article-name
         font-size: 40px
+
 
       .author
         font-size: 14px

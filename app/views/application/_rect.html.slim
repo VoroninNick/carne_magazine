@@ -1,7 +1,8 @@
-- image_url = resource.image.url(style)
+- image_url = resource.image.exists?(style) ? resource.image.url(style) : nil
+
 .rect-outer class="rect-#{style}"
   .rect
-    .rect-bg style="background-image: url('#{image_url}')"
+    .rect-bg style=("background-image: url('#{image_url}')" if image_url)
       img src=image_url
 
 
@@ -19,3 +20,6 @@
           |,
           .author-description
             = resource.author_description
+
+      .shadow-wrap
+        .shadow
