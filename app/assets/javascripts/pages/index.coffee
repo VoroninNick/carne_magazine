@@ -67,6 +67,30 @@ animateSidebar = (timeline)->
 
 
 
+window.animate_home_articles = ()->
+
+  window.tl_home_articles ?= new TimelineLite
+  tl_home_articles.set(".home-articles", {visibility: "visible"})
+
+  tl_home_articles.staggerFromTo(".rect-bgc", 0.5, {width: 0}, {width: "100%"}, 0.1)
+  #tl.staggerFromTo(".rect-bgc", 0.5, {left: 0, width: "100%"}, {left: "100%", width: "100%"}, 0.1)
+  tl_home_articles.staggerFromTo(".rect-bg", 0.5, {left: "-100%"}, {left: 0}, 0.1)
+
+
 
 
 animate_home_banner()
+#animate_home_articles()
+
+$rect_container = $(".rect-container")
+$rect_container.appear();
+$rect_container.on "appear", (event, $all_appeared_elements)->
+  if window.home_articles_appeared
+    return
+  window.home_articles_appeared = true
+  animate_home_articles()
+
+###
+$rect_container.on "disappear", (event, $all_appeared_elements)->
+  window.home_articles_appeared = false
+###

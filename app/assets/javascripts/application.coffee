@@ -5,6 +5,7 @@
 #= require images
 
 #= require plugins/jquery.scrolldelta
+#= require jquery_appear/jquery.appear
 
 #= require plugins/split_text.min
 #= require plugins/tween_max.min
