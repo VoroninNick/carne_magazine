@@ -14,7 +14,7 @@ customScroll = (event) ->
   console.log "customScroll: delta: ", delta
   if delta
     scrollTop = $window.scrollTop()
-    finScroll = scrollTop - (parseInt(delta * 100) * 3 * 4)
+    finScroll = scrollTop - (parseInt(delta * 100) * 4)
     TweenMax.to($window, 1.5,
       {
         scrollTo: {
