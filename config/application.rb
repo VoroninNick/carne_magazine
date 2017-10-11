@@ -26,5 +26,8 @@ module CarneMagazine
 
     # file_editor
     config.assets.precompile += %w(fonts/octicons/octicons.woff cms/file_editor.css cms/file_editor.js)
+
+    # test
+    config.assets.precompile += %w(test1.css test1.js test2.css test2.js)
   end
 end

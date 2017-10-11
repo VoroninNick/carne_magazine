@@ -12,4 +12,13 @@ class PagesController < ApplicationController
     @article3 = Article.find(5)
   end
 
+  def test1
+    @head_title = "Animations made via greensock"
+    render layout: "test1"
+  end
+
+  def test2
+    render layout: "test2"
+  end
+
 end

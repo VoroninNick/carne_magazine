@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     root action: "index"
   end
 
+  scope "test", controller: :pages do
+    get "1", action: :test1
+  end
+
+
   scope :articles, controller: :articles do
     root action: :index, as: :articles
     get "id", as: :article, action: :show
