@@ -22,7 +22,8 @@ customScroll = (event) ->
           autoKill: true
         }
       }
-      ease: Power4.easeOut
+      #ease: Power4.easeOut
+      ease: Elastic.easeOut.config(1, 0.3)
       overwrite: 5
       onComplete: ->
     )
