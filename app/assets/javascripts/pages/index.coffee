@@ -87,16 +87,15 @@ window.animate_home_articles = ()->
   #tl.staggerFromTo(".rect-bgc", 0.5, {left: 0, width: "100%"}, {left: "100%", width: "100%"}, 0.1)
   tl_home_articles.staggerFromTo(".rect-bg", 0.5, {left: "-100%"}, {left: 0}, 0.1)
 
-window.animate_article_text = ($article)->
-  tl = new TimelineLite
-  #article_selector = '.' + $article.attr("data-navigation-key")
-  #article_selector = ".article-1"
-  $article_title = $article.find(".article-title")
-  $article_social_links = $article.find(".socials .share-link")
-  tl.set($article,  {visibility:"visible"})
-  tl.from($article_title, 0.5, {opacity: 0}, {opacity: 1})
+animate_social_links = (jquery_element_or_selector, timeline)->
+  $e = $(jquery_element_or_selector)
+  timeline ?= new TimelineLite
+  $links = $e.find(".share-link")
+  timeline.delay(0.3)
+  timeline.staggerFromTo($links, 0.3, {scale: 0, rotation: -180}, {scale: 1, rotation: 0}, 0.1)
 
-  tl.staggerFromTo($article_social_links, 0.5, {scale: 0, rotation: -180}, {rotation: 0, scale: 1}, 0.1)
+  timeline
+
 
 
 animateText = (jquery_element_or_selector, letter_duration, letter_delay, timeline)->
@@ -120,11 +119,6 @@ $(".rect-container").on "appear_once", (event, $all_appeared_elements)->
   animate_home_articles()
 
 
-###
-$document.on "appear_once", ".inline-article", (event, $all_appeared_elements)->
-  animate_article_text($(this))
-###
-
 $document.on "appear_once", ".fadeInUp-tree *, .fadeInUp", ->
   $e = $(this)
   t = new TimelineLite
@@ -142,3 +136,6 @@ $document.on "appear_once", ".inline-article .article-category, .inline-article 
   $e = $(this)
   animateText($e)
 
+$document.on "appear_once", ".socials", ->
+  $e = $(this)
+  animate_social_links($e)
