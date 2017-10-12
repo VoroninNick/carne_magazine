@@ -14,7 +14,7 @@ animate_rects = ()->
   #t.staggerTo($rect, 0.1, {background: "red", width: w, height: h}, 0.1, "red")
   t.to($rect_part1, 5, {background: "red", width: "100%", height: "100%"})
   t2 = new TimelineLite
-  t2.delay(1)
+  #t2.delay(1)
   #t2.staggerTo($rect, 0.1, {background: "blue"}, 0.1)
   t2.to($rect_part2, 5, {background: "blue", width: "100%", height: "100%"})
 
