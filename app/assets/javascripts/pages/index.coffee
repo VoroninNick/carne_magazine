@@ -9,10 +9,14 @@ animate_home_banner = ()->
 
 
   window.tl = new TimelineLite
+
   mySplitText = new SplitText(article_title_selector, {type:"words,chars"})
+  tl.set(article_title_selector, {opacity: 1})
   chars = mySplitText.chars
 
-  TweenLite.set(article_title_selector, {perspective:400});
+  #TweenLite.set(article_title_selector, {perspective:400});
+
+
 
   tl.staggerFrom(chars, 0.4, {opacity:0,  ease:Back.easeOut}, 0.04, "+=0");
 
