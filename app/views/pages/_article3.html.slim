@@ -4,22 +4,25 @@
 
     .article-banner-content.row
       .columns
-        .article-label
-          |Article #{number}
+        .article-label.appear.animated-button
+          .bg
+          .bg2
+          .content
+            |Article #{number}
         - if article.category.try(:name).present?
-          .article-category
+          .article-category.appear
             = article.category.name
-        .article-title
+        .article-title.appear
           = article.name
-        .article-intro-line
-        .article-intro
+        .article-intro-line.appear
+        .article-intro.appear.fadeInUp
           |The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
 
     .row.article-content
       .columns.large-6
         .row
           .columns.large-10
-            .author
+            .author.appear
               .author-image
               .author-description
                 |by
@@ -28,7 +31,7 @@
                 .author-description
                   |Carne Luxembourg
 
-
+            .article-content.appear-tree.fadeInUp-tree
               h3
                 |Dog
               p
@@ -49,9 +52,9 @@
       .columns.large-6.large-push-1
         .row
           .columns
-            .image
+            .image.appear
               img src=asset_path("articles/article_3/image_2.jpg")
-          .columns.large-10.float-left
+          .columns.large-10.float-left.appear-tree.fadeInUp-tree
             p
               |The term "domestic dog" is generally used for both domesticated and feral varieties. The English word dog comes from Middle English dogge, from Old English docga, a "powerful dog breed".[20] The term may possibly derive from Proto-Germanic *dukkōn, represented in Old English finger-docce ("finger-muscle").[21] The word also shows the familiar petname diminutive -ga also seen in frogga "frog", picga "pig", stagga "stag", wicga "beetle, worm", among others.[22] Piotr Gąsiorowski has suggested that Old English *docga is actually derived from Old English colour adjective dox.
 

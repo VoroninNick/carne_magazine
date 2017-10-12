@@ -4,23 +4,26 @@
 
     .article-banner-content.row
       .columns
-        .article-label
-          |Article #{number}
+        .article-label.appear.animated-button
+          .bg
+          .bg2
+          .content
+            |Article #{number}
         - if article.category.try(:name).present?
-          .article-category
+          .article-category.appear
             = article.category.name
-        .article-title
+        .article-title.appear
           /= article.name
           |Gaining
           br
           |client trust
-        .article-intro-line
-        .article-intro
+        .article-intro-line.appear
+        .article-intro.appear.appear.fadeInUp
           |The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
 
     .row
       .columns.large-5
-        .author
+        .author.appear
           .author-image
           .author-description
             |by
@@ -28,7 +31,7 @@
               |Steve Bernat
             .author-description
               |Carne Luxembourg
-        .article-content
+        .article-content.appear-tree.fadeInUp-tree
           h3
             |Dog
           p
@@ -36,7 +39,7 @@
           p
             |New research seems to show that the dog's high sociability may be affected by "the same genes as in humans."[15][16] Their long association with humans has led dogs to be uniquely attuned to human behavior[17] and they are able to thrive on a starch-rich diet that would be inadequate for other canid species.[18] Dogs vary widely in shape, size and colours.[19] Dogs perform many roles for people, such as hunting, herding, pulling loads, protection, assisting police and military, companionship and, more recently, aiding handicapped individuals and therapeutic roles. This influence on human society has given them the sobriquet "man's best friend".
 
-      .columns.large-5.large-push-2
+      .columns.large-5.large-push-2.appear-tree.fadeInUp-tree
         .article-content
           p
             |The term "domestic dog" is generally used for both domesticated and feral varieties. The English word dog comes from Middle English dogge, from Old English docga, a "powerful dog breed".[20] The term may possibly derive from Proto-Germanic *dukkōn, represented in Old English finger-docce ("finger-muscle").[21] The word also shows the familiar petname diminutive -ga also seen in frogga "frog", picga "pig", stagga "stag", wicga "beetle, worm", among others.[22] Piotr Gąsiorowski has suggested that Old English *docga is actually derived from Old English colour adjective dox.
@@ -50,7 +53,7 @@
 
 
       .columns
-        .article-video.video
+        .article-video.video.appear.fadeInUp
           .iframe-wrap
             iframe allowfullscreen="" data-video=article.frame_video_url frameborder="0" src=""
           .video-controls-panel
@@ -62,14 +65,14 @@
 
 
       .columns.large-5
-        .article-content
+        .article-content.appear-tree.fadeInUp-tree
           p
             |In 2003, the ICZN ruled in its Opinion 2027 that the "name of a wild species...is not invalid by virtue of being predated by the name based on a domestic form." Additionally, the ICZN placed the taxon Canis lupus as a conserved name on the official list under this opinion.[36] In the third edition of Mammal Species of the World published in 2005, the mammalogist W. Christopher Wozencraft listed under the wolf Canis lupus what he proposed to be two subspecies: "familiaris Linneaus, 1758 [domestic dog]" and "dingo Meyer, 1793 [domestic dog]",[a] with the comment "Includes the domestic dog as a subspecies, with the dingo provisionally separate – artificial variants created by domestication and selective breeding. Although this may stretch the subspecies concept, it retains the correct allocation of synonyms." Although the earliest use of the name "dingo" was Canis familiaris dingo (Blumenbach, 1780),[37] Wozencraft attributed it to Meyer from 1793 without comment.
 
 
 
       .columns.large-5
-        .article-content
+        .article-content.appear-tree.fadeInUp-tree
           p
             |Domestic dogs have been selectively bred for millennia for various behaviors, sensory capabilities, and physical attributes.[14] Modern dog breeds show more variation in size, appearance, and behavior than any other domestic animal.[14] Dogs are predators and scavengers, and like many other predatory mammals, the dog has powerful muscles, fused wrist bones, a cardiovascular system that supports both sprinting and endurance, and teeth for catching and tearing.
           p

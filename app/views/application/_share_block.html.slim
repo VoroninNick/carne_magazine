@@ -1,8 +1,8 @@
 .share-block
-  .share-block-outer-separator
+  .share-block-outer-separator.appear
   .share-block-inner-separator
   p.share-block-title Share this article on:
-  ul.socials
+  ul.socials.appear
     - Cms::Helpers::SocialHelper.get_share_links(nil, resource.url, resource.name, [:facebook, :twitter, :linkedin, :email]).each_pair do |key, value|
       li
         a.share-link href=value target="_blank" window-width="700" window-height="700" window-title="Share article" title=t("components.share-block.html_title.#{key}")

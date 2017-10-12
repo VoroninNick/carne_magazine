@@ -36,10 +36,10 @@ animate_home_banner = ()->
 
 
 
-  animateButton(tl2, ".main-featured-article .article-category", 0.3)
-  animateIssueNumber(tl3, ".number", 0.3)
+  animateButton(".main-featured-article .article-category", 0.3, tl2)
+  animateIssueNumber(".number", 0.3, tl3)
   tl3.fromTo(".magazine-name, .issue-date", 0.5, {opacity: 0}, {opacity: 1})
-  tl2.from(".author", 0.3, {opacity: 0})
+  #tl2.from(".author", 0.3, {opacity: 0})
 
   w = $(".banner-content").offset().left - 45 + 240
 
@@ -50,18 +50,25 @@ animate_home_banner = ()->
 
 
 
-animateButton = (timeline, selector, duration)->
-  #timeline.fromTo(selector)
-  timeline.set(selector + " .bg", {width: 0})
-  timeline.fromTo(selector + " .bg", duration, {width: 0}, {width: "100%"})
-  #timeline.to(selector + " .bg", 0.1, {background: "#1e4272"})
-  #timeline.fromTo(selector + " .bg", duration, {width: "100%"}, {width: 0})
-  #timeline.fromTo(selector + " .bg", duration, {background: "#fff", width: 0}, {width: "100%"})
-  timeline.fromTo(selector + " .bg2", duration, {width: 0}, {width: "100%"})
-  timeline.fromTo(selector + " .content", 0.3, {opacity: 0}, {opacity: 1})
+animateButton = (jquery_element_or_selector, duration, timeline)->
+  $button = $(jquery_element_or_selector)
+  $bg = $button.find(".bg")
+  $bg2 = $button.find(".bg2")
+  $content = $button.find(".content")
 
-animateIssueNumber = (timeline, selector, duration)->
-  animateButton(timeline, selector, duration)
+  duration ?= 0.3
+  timeline ?= new TimelineLite
+
+  timeline.set($bg, {width: 0})
+  timeline.fromTo($bg, duration, {width: 0}, {width: "100%"})
+
+  timeline.fromTo($bg2, duration, {width: 0}, {width: "100%"})
+  timeline.fromTo($content, 0.3, {opacity: 0}, {opacity: 1})
+
+  timeline
+
+animateIssueNumber = (selector, duration, timeline)->
+  animateButton(selector, duration, timeline)
 
 animateSidebar = (timeline)->
   #timeline.set(".bg, .bg2", {width: 0})
@@ -80,40 +87,58 @@ window.animate_home_articles = ()->
   #tl.staggerFromTo(".rect-bgc", 0.5, {left: 0, width: "100%"}, {left: "100%", width: "100%"}, 0.1)
   tl_home_articles.staggerFromTo(".rect-bg", 0.5, {left: "-100%"}, {left: 0}, 0.1)
 
+window.animate_article_text = ($article)->
+  tl = new TimelineLite
+  #article_selector = '.' + $article.attr("data-navigation-key")
+  #article_selector = ".article-1"
+  $article_title = $article.find(".article-title")
+  $article_social_links = $article.find(".socials .share-link")
+  tl.set($article,  {visibility:"visible"})
+  tl.from($article_title, 0.5, {opacity: 0}, {opacity: 1})
+
+  tl.staggerFromTo($article_social_links, 0.5, {scale: 0, rotation: -180}, {rotation: 0, scale: 1}, 0.1)
 
 
+animateText = (jquery_element_or_selector, letter_duration, letter_delay, timeline)->
+  $e = $(jquery_element_or_selector)
+  timeline ?= new TimelineLite
+  letter_duration ?= 0.4
+  letter_delay ?= 0.04
+
+  mySplitText = new SplitText($e, {type:"words,chars"})
+  chars = mySplitText.chars
+
+  timeline.staggerFrom(chars, letter_duration, {opacity:0,  ease:Back.easeOut}, letter_delay, "+=0");
+
+  timeline
 
 animate_home_banner()
 if $(".home-articles:appeared").length
   animate_home_articles()
 
-$rect_container = $(".rect-container")
-$rect_container.appear();
-$rect_container.on "appear", (event, $all_appeared_elements)->
-  if window.home_articles_appeared
-    return
-  window.home_articles_appeared = true
+$(".rect-container").on "appear_once", (event, $all_appeared_elements)->
   animate_home_articles()
 
+
 ###
-$rect_container.on "disappear", (event, $all_appeared_elements)->
-  window.home_articles_appeared = false
+$document.on "appear_once", ".inline-article", (event, $all_appeared_elements)->
+  animate_article_text($(this))
 ###
 
-
-window.animate_article_text = ($article)->
-  tl = new TimelineLite
-  article_selector = '.' + $article.attr("data-navigation-key")
-  article_selector = ".article-1"
-  tl.set(article_selector,  {visibility:"visible"})
-  tl.from(".article-title", 0.5, {opacity: 0}, {opacity: 1})
-  tl.staggerFromTo(".socials .share-link", 0.5, {scale: 0, rotation: -180}, {rotation: 0, scale: 1}, 0.1)
+$document.on "appear_once", ".fadeInUp-tree *, .fadeInUp", ->
+  $e = $(this)
+  t = new TimelineLite
+  t.fromTo($e, 2, {opacity: 0, y: "20%"}, {opacity: 1, y: "0%"})
 
 
-$inline_articles = $(".inline-article").appear()
-$inline_articles.on "appear", (event, $all_appeared_elements)->
-  $article = $all_appeared_elements.first()
-  return if $article.data("appeared")
-  $article.data("appeared", true)
-  animate_article_text($article)
+$document.on "appear_once", ".article-label", ->
+  $e = $(this)
+  #t.fromTo($e, 2, {opacity: 0, y: "20%"}, {opacity: 1, y: "0%"})
+  animateButton($e)
+
+
+
+$document.on "appear_once", ".inline-article .article-category, .inline-article .article-title", ->
+  $e = $(this)
+  animateText($e)
 

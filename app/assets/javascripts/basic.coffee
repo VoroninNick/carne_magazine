@@ -39,3 +39,24 @@ scroll_delay = ()->
 $document.on "mousewheel", scroll_delay
 if $document.addEventListener
   document.addEventListener('DOMMouseScroll', customScroll, false)
+
+
+$(".appear, .appear-tree *").appear()
+
+
+$document.on "appear", "*", (event, $all_appeared_elements)->
+#$element = $(this)
+#appear_tree = $element.hasClass("appear-tree")
+#appear_self = $element.hasClass("appear")
+  $all_appeared_elements.each(
+    ()->
+      $e = $(this)
+      appeared = $e.data("_appeared")
+      if !appeared
+        $e.data("_appeared", true)
+        $e.trigger("appear_once", event, $all_appeared_elements, $e)
+        $e.addClass("appeared")
+        $tree_root = $e.closest(".appear-tree")
+        $tree_root.trigger("appear:tree:node", event, $all_appeared_elements, $e)
+
+  )
