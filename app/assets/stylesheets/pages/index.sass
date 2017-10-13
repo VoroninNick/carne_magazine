@@ -222,6 +222,23 @@
   color: $white-color
   overflow-x: hidden
 
+  .author-image
+    border: 1px solid #ddd
+    display: inline-block
+    float: left
+
+  &.light-bg
+    .author
+      +clearfix
+    .author-description-block
+      display: inline-block
+      float: left
+      color: #555
+      margin: 19px 0 0 24px
+    .author-name
+      display: inline
+      margin-left: 6px
+
   .article-content-block
     padding: 110px 0 0 0
   .article-label
@@ -336,11 +353,17 @@
     img
       opacity: 1
 
+  .article-title
+    margin: 0 0 90px 0
+
   .share-block
     margin: 160px 0 64px 0
 
   +breakpoint(medium down)
     position: relative
+
+    .article-title
+      margin: 0 0 60px 0
 
     .article-content-block
       padding: 0
@@ -382,6 +405,7 @@
     .article-title
       font-size: 42px
       margin-bottom: 15px
+
 
 
 
