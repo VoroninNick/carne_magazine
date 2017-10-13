@@ -8,7 +8,6 @@ html.no-js
     javascript:
         document.getElementsByTagName("html")[0].className = "js"
     = inline_css("preloader")
-    = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
     = render "preloader"
@@ -22,4 +21,5 @@ html.no-js
       = yield
     - if @render_footer != false
       = render "footer"
+    = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag "application", 'data-turbolinks-track' => true
