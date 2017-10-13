@@ -1,22 +1,24 @@
 .article-2.inline-article.light-bg data-navigation-key="article-#{number}"
   .inline-article-inner
-    .article-banner-image style="background-image: url('#{asset_path("articles/article_3/banner.jpg")}')"
+    .article-banner
+      .article-banner-image style="background-image: url('#{asset_path("articles/article_3/banner.jpg")}')"
 
-    .article-banner-content.row
-      .columns
-        .article-label.appear.animated-button data-appear-top-offset=-500
-          .bg
-          .bg2
-          .content
-            |Article #{number}
-        - if article.category.try(:name).present?
-          .article-category.appear data-appear-top-offset=-500
-            = article.category.name
-        .article-title.appear data-appear-top-offset=-500
-          = article.name
-        .article-intro-line.appear data-appear-top-offset=-500
-        .article-intro.appear.fadeInUp data-appear-top-offset=-500
-          |The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
+      .article-banner-content.row
+        .columns
+          .article-label.appear.animated-button data-appear-top-offset=-500
+            .bg
+            .bg2
+            .content
+              |Article #{number}
+          - if article.category.try(:name).present?
+            .article-category.appear data-appear-top-offset=-500
+              = article.category.name
+          .article-title.appear data-appear-top-offset=-500
+            = article.name
+    .article-intro-with-line.row
+      .article-intro-line.appear data-appear-top-offset=-500
+      .article-intro.appear.fadeInUp data-appear-top-offset=-500
+        |The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
 
     .row.article-content
       .columns.large-6
