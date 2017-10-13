@@ -285,6 +285,7 @@
   .article-author
     margin: 60px 0 0 0
 
+
   .author-name
     text-transform: uppercase
     font-weight: 700
@@ -420,6 +421,11 @@
 .article-3
   background: white
 
+.article-2, .article-3
+  +breakpoint(small only)
+    .author
+      padding: 0 0 30px 0
+
 .inline-article
   +breakpoint(medium down)
     .share-block-outer-separator
@@ -449,6 +455,9 @@
 
     .article-intro
       font-size: 18px
+      margin: 0 0 30px 0
+
+
 
 
 
