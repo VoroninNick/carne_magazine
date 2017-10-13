@@ -1,19 +1,20 @@
-.sidebar
-  .bg.sidebar-bg
-  .bg2.sidebar-bg2
-  .sidebar-inner
-    .sidebar-logo
-      img src=asset_path("logo-on-transparent-bg.png")
+.sidebar-holder
+  .sidebar
+    .bg.sidebar-bg
+    .bg2.sidebar-bg2
+    .sidebar-inner
+      .sidebar-logo
+        img src=asset_path("logo-on-transparent-bg.png")
 
-    .sidebar-navigation
-      .item.active data-key="cover-story"
-        |S
-      .item data-key="what-inside"
-        |C
-      - 3.times do |i|
-        .item data-key="article-#{i + 1}"
-          = i + 1
+      .sidebar-navigation
+        .item.active data-key="cover-story"
+          |S
+        .item data-key="what-inside"
+          |C
+        - 3.times do |i|
+          .item data-key="article-#{i + 1}"
+            = i + 1
 
 
-    .search-icon
-      = embedded_svg_from_assets("svg/search")
+      .search-icon
+        = embedded_svg_from_assets("svg/search")

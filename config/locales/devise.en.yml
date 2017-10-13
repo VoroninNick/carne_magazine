@@ -1,0 +1,7 @@
+en:
+  devise:
+    sessions:
+      new:
+        title: "Admin panel"
+        email: "Email"
+        password: "Password"
