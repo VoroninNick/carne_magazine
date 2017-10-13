@@ -43,7 +43,7 @@ handle_scroll = (e)->
   else
     delta = e
 
-  console.log "delta: ", e.scrollTopDelta
+  #console.log "delta: ", e.scrollTopDelta
 
   $("body").attr("header_timeout")
   #console.log "delta: ", delta

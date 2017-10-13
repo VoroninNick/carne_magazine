@@ -79,11 +79,11 @@ animateSidebar = (timeline)->
 
 
 window.animate_home_articles = ()->
-
+  console.log "animate_home_articles"
   window.tl_home_articles ?= new TimelineLite
   tl_home_articles.set(".home-articles", {visibility: "visible", opacity: 1})
   #tl.set(".rect", {opacity: 1})
-
+  tl_home_articles.set(".rect", {visibility: "visible"})
   tl_home_articles.delay(0.5)
   tl_home_articles.staggerFromTo(".rect-bgc", 0.5, {width: 0}, {width: "100%"}, 0.1)
   #tl.staggerFromTo(".rect-bgc", 0.5, {left: 0, width: "100%"}, {left: "100%", width: "100%"}, 0.1)
@@ -115,10 +115,11 @@ animateText = (jquery_element_or_selector, letter_duration, letter_delay, timeli
   timeline
 
 animate_home_banner()
-if $(".home-articles:appeared").length
-  animate_home_articles()
 
-$(".rect-container").on "appear_once", (event, $all_appeared_elements)->
+#if $(".home-articles:appeared").length
+#  animate_home_articles()
+
+$document.on "appear_once", ".rect-container", (event, $all_appeared_elements)->
   animate_home_articles()
 
 
@@ -142,3 +143,5 @@ $document.on "appear_once", ".inline-article .article-category, .inline-article 
 $document.on "appear_once", ".socials", ->
   $e = $(this)
   animate_social_links($e)
+
+

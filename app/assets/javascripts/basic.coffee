@@ -11,7 +11,7 @@ customScroll = (event) ->
     delta = -event.detail / 3
   else if event.originalEvent && event.originalEvent.deltaY
     delta = -event.originalEvent.deltaY
-  console.log "customScroll: delta: ", delta
+  #console.log "customScroll: delta: ", delta
   if delta
     scrollTop = $window.scrollTop()
     finScroll = scrollTop - (parseInt(delta * 100) * 4)
@@ -60,4 +60,4 @@ appear_handler = (event, $all_appeared_elements)->
   )
 
 $document.on "appear", "*", appear_handler
-appear_handler.call(this, {}, $appearable_elements.filter(":appeared"))
+#appear_handler.call(this, {}, $appearable_elements.filter(":appeared"))

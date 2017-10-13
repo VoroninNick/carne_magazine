@@ -3,7 +3,7 @@ $document.on "scrolldelta", (e)->
 
   $block = get_current_color_block()
 
-  console.log "scrolldelta: block length: ", $block.length
+  #console.log "scrolldelta: block length: ", $block.length
 
   navigation_dark = $block.hasClass("light-bg")
   navigation_light = !navigation_dark
