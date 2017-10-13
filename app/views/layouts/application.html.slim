@@ -7,9 +7,11 @@ html.no-js
     meta content="width=device-width, initial-scale=1.0" name="viewport"
     javascript:
         document.getElementsByTagName("html")[0].className = "js"
+    = inline_css("preloader")
     = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    = render "preloader"
     = render "sidebar"
     = render "menu"
     = render "magazine_label"

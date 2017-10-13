@@ -65,3 +65,10 @@ appear_handler = (event, $all_appeared_elements)->
 
 $document.on "appear", "*", appear_handler
 #appear_handler.call(this, {}, $appearable_elements.filter(":appeared"))
+
+
+page_loaded_handler = ()->
+  $('body').addClass('loaded');
+  $('#loader-wrapper').fadeOut();
+
+window.addEventListener('load', page_loaded_handler)
