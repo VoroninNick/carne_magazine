@@ -80,58 +80,67 @@
 
 
 
+
 +breakpoint(large up)
-  .rect-container
-    .rect
-      +transition-duration(0.5s)
-      +transition-property(all)
-      .rect-bg
+  .js
+    .rect-container
+      //opacity: 0
+      .rect
+        //opacity: 0
         +transition-duration(0.5s)
         +transition-property(all)
-
-      .description-block
-        z-index: 1
-
-      .shadow-wrap
-        position: absolute
-        bottom: 0
-        width: 100%
-        height: 35%
-        left: 0
-        overflow: hidden
-
-        +transform(translateY(100%))
-        +transition-duration(0.5s)
-        +transition-property(all)
-
-
-        .shadow
-          display: none
-          height: 100%
-          width: 100%
-          //background: rgba($sky-blue-color, 0.4)
-
-
-
-
-      &:hover
-        z-index: 2
-        +transform(scale(1.1))
-
-
+        .rect-bgc
+          width: 0
         .rect-bg
-          +transform(scale(1.1))
+          left: -100%
+          //+transition-duration(0.5s)
+          //+transition-property(all)
+
+
+        .description-block
+          z-index: 1
+          opacity: 0
 
         .shadow-wrap
-          +transform(translateY(0))
-          //background: rgb(135,224,253) /* Old browsers */
-          //+linear-gradient("top, rgba(135,224,253,0.6) 4%, rgba(5,171,224,0.6) 90%, rgba(5,171,224,0.6) 90%, rgba(83,203,241,0.6) 99%, rgba(83,203,241,0.6) 99%")
-          +linear-gradient("to bottom, rgba(56,159,217,0) 0%,rgba(56,159,217,1) 100%")
-          //+ie-gradient(#87e0fd, #53cbf1)
-          //+ie-gradient(#00389fd9,#389fd9)
-          //.shadow
+          position: absolute
+          bottom: 0
+          width: 100%
+          height: 35%
+          left: 0
+          overflow: hidden
+
+          +transform(translateY(100%))
+          +transition-duration(0.5s)
+          +transition-property(all)
+
+
+          .shadow
+            display: none
+            height: 100%
+            width: 100%
+            //background: rgba($sky-blue-color, 0.4)
+
+
+
+
+        &:hover
+          z-index: 2
+          +transform(scale(1.1))
+
+
+          .rect-bg
+            +transform(scale(1.1))
+
+          .shadow-wrap
             +transform(translateY(0))
-            box-shadow: 1px 1px 100px rgba($sky-blue-color, 1)
+            //background: rgb(135,224,253) /* Old browsers */
+            //+linear-gradient("top, rgba(135,224,253,0.6) 4%, rgba(5,171,224,0.6) 90%, rgba(5,171,224,0.6) 90%, rgba(83,203,241,0.6) 99%, rgba(83,203,241,0.6) 99%")
+            +linear-gradient("to bottom, rgba(56,159,217,0) 0%,rgba(56,159,217,1) 100%")
+            //+ie-gradient(#87e0fd, #53cbf1)
+            //+ie-gradient(#00389fd9,#389fd9)
+            //.shadow
+              +transform(translateY(0))
+              box-shadow: 1px 1px 100px rgba($sky-blue-color, 1)
 
 +breakpoint(small only)
   .rect-container

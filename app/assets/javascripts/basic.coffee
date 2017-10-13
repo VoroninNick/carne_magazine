@@ -40,14 +40,12 @@ $document.on "mousewheel", scroll_delay
 if $document.addEventListener
   document.addEventListener('DOMMouseScroll', customScroll, false)
 
+$appearable_elements = $(".appear, .appear-tree *")
+$appearable_elements.appear()
 
-$(".appear, .appear-tree *").appear()
 
 
-$document.on "appear", "*", (event, $all_appeared_elements)->
-#$element = $(this)
-#appear_tree = $element.hasClass("appear-tree")
-#appear_self = $element.hasClass("appear")
+appear_handler = (event, $all_appeared_elements)->
   $all_appeared_elements.each(
     ()->
       $e = $(this)
@@ -60,3 +58,6 @@ $document.on "appear", "*", (event, $all_appeared_elements)->
         $tree_root.trigger("appear:tree:node", event, $all_appeared_elements, $e)
 
   )
+
+$document.on "appear", "*", appear_handler
+appear_handler.call(this, {}, $appearable_elements.filter(":appeared"))

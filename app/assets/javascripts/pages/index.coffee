@@ -82,10 +82,13 @@ window.animate_home_articles = ()->
 
   window.tl_home_articles ?= new TimelineLite
   tl_home_articles.set(".home-articles", {visibility: "visible", opacity: 1})
+  #tl.set(".rect", {opacity: 1})
 
+  tl_home_articles.delay(0.5)
   tl_home_articles.staggerFromTo(".rect-bgc", 0.5, {width: 0}, {width: "100%"}, 0.1)
   #tl.staggerFromTo(".rect-bgc", 0.5, {left: 0, width: "100%"}, {left: "100%", width: "100%"}, 0.1)
   tl_home_articles.staggerFromTo(".rect-bg", 0.5, {left: "-100%"}, {left: 0}, 0.1)
+  tl_home_articles.staggerFromTo(".description-block", 0.5, {opacity: 0}, {opacity: 1}, 0.1)
 
 animate_social_links = (jquery_element_or_selector, timeline)->
   $e = $(jquery_element_or_selector)
