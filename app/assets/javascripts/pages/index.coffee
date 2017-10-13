@@ -136,7 +136,7 @@ $document.on "appear_once", ".article-label", ->
 
 
 
-$document.on "appear_once", ".inline-article .article-category, .inline-article .article-title", ->
+$document.on "appear_once", ".inline-article .article-category, .inline-article .article-title, .home-articles .section-title", ->
   $e = $(this)
   animateText($e)
 
