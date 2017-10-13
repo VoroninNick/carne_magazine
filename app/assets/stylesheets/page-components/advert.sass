@@ -2,7 +2,7 @@
   position: relative
   //padding: 0 0 0 $sidebar-width
   background-repeat: no-repeat
-  //background-attachment: fixed
+  background-attachment: fixed
   background-size: cover
   background-position: 50%
   .label
@@ -20,5 +20,7 @@
     opacity: 0
 
 
+  +breakpoint(medium down)
+    background-attachment: initial
   +breakpoint(small only)
     padding: 0
