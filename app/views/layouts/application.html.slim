@@ -18,7 +18,8 @@ html.no-js
 
 
     .main-wrapper
-      = yield
+      .main-inner
+        = yield
     - if @render_footer != false
       = render "footer"
     = stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
