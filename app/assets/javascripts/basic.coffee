@@ -69,6 +69,11 @@ $document.on "appear", "*", appear_handler
 
 page_loaded_handler = ()->
   $('body').addClass('loaded');
-  $('#loader-wrapper').fadeOut();
+  $('#loader-wrapper').fadeOut(
+    complete: ()->
+      $.force_appear()
+      $window.trigger("after_preloader")
+  );
+
 
 window.addEventListener('load', page_loaded_handler)

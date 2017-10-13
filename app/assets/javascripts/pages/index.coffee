@@ -114,7 +114,9 @@ animateText = (jquery_element_or_selector, letter_duration, letter_delay, timeli
 
   timeline
 
-animate_home_banner()
+#window.addEventListener("load", animate_home_banner)
+
+$window.on "after_preloader", animate_home_banner
 
 #if $(".home-articles:appeared").length
 #  animate_home_articles()

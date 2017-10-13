@@ -21,4 +21,4 @@
 #= require basic
 #= require pages/index
 
-#= require post_initializer
+# require post_initializer
