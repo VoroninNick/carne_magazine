@@ -30,6 +30,16 @@
     height: 100%
     background-size: cover
 
+
+  .main-banner-person
+    width: 50vw
+    padding-top: 50vw
+    right: 0
+    position: absolute
+    background-size: cover
+    background-position: bottom center
+    bottom: 0
+
   .banner-content-wrap
     position: relative
     margin: 0 90px
@@ -158,19 +168,33 @@
       margin: 0
 
   +breakpoint(small only)
+    .main-banner-person
+      width: 50vh
+      padding-top: 50vh
+
     .main-featured-article
       .article-name
         font-size: 40px
-
 
       .author
         font-size: 14px
 
     .featured-articles-block
+      //display: none
+    .featured-articles
       display: none
 
     .banner-content-wrap
-      padding: 120px 0 0 0
+      //padding: 120px 0 0 0
+      padding: 30px 0 0 0
+
+  @media only screen and (max-width: 639px) and (orientation: landscape)
+    .main-banner-person
+      width: 50vw
+      padding-top: 50vw
+    .main-featured-article
+      .article-category
+        margin-top: 0
 
 .home-articles
   background: #fff
@@ -242,11 +266,15 @@
   .article-author
     margin: 60px 0 0 0
 
+  .author-name
+    text-transform: uppercase
+    font-weight: 700
+
 
   &.dark-bg
     background: $extra-dark-blue-color
 
-    .author-name
+    .article-author
       color: #615c86
 
     .share-block
@@ -309,7 +337,7 @@
   .share-block
     margin: 160px 0 64px 0
 
-  +breakpoint(medium only)
+  +breakpoint(medium down)
     position: relative
 
     .article-content-block
@@ -324,9 +352,22 @@
       img
         width: 200px
 
+    .share-block
+      width: 50%
+      overflow: hidden
+      margin: 30px 0 0 0
+
+      .share-link
+        svg
+          width: 55px
+          height: 55px
+
+      .share-block-outer-separator
+        display: none
+
   +breakpoint(small only)
     padding-top: 30px
-    .image
+    //.image
       display: none
 
     .article-content-block
@@ -351,6 +392,9 @@
   background: white
 
 .inline-article
+  +breakpoint(medium down)
+    .share-block-outer-separator
+      display: none
   +breakpoint(small only)
     //.inline-article-inner
       position: relative
