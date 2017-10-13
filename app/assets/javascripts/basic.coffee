@@ -15,7 +15,9 @@ customScroll = (event) ->
   #console.log "customScroll: delta: ", delta
   if delta
     scrollTop = $window.scrollTop()
-    increment = -1 * (parseInt(delta * 100) * 4)
+    #increment = -1 * (parseInt(delta * 100) * 4)
+    step = window.innerHeight * 0.4
+    increment = if delta < 0 then step else step * -1
     finScroll = scrollTop + increment
 
     console.log "finScroll: ", finScroll, "; delta: ", delta, increment: increment
@@ -39,7 +41,7 @@ customScroll = (event) ->
 
 
 scroll_delay = ()->
-  delay("custom_scroll", customScroll, 50, true, false)
+  delay("custom_scroll", customScroll, 20, true, false)
 
 $document.on "mousewheel", scroll_delay
 if $document.addEventListener
