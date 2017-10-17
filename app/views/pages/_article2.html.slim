@@ -3,21 +3,22 @@
     .article-banner
       .article-banner-image.dark-bg style="background-image: url('#{asset_path("articles/article_2/banner.jpg")}')"
 
-      .article-banner-content.row
-        .columns
-          .article-label.appear.animated-button data-appear-top-offset=-250
-            .bg
-            .bg2
-            .content
-              |Article #{number}
-          - if article.category.try(:name).present?
-            .article-category.appear data-appear-top-offset=-250
-              = article.category.name
-          .article-title.appear data-appear-top-offset=-250
-            /= article.name
-            |Gaining
-            br
-            |client trust
+      .article-banner-content
+        .row
+          .columns
+            .article-label.appear.animated-button data-appear-top-offset=-250
+              .bg
+              .bg2
+              .content
+                |Article #{number}
+            - if article.category.try(:name).present?
+              .article-category.appear data-appear-top-offset=-250
+                = article.category.name
+            .article-title.appear data-appear-top-offset=-250
+              /= article.name
+              |Gaining
+              br
+              |client trust
     .article-intro-with-line.row
       .columns
         .article-intro-line.appear data-appear-top-offset=-250
