@@ -1,6 +1,9 @@
 .rect-container-row
   //max-width: 900px
 
+  +breakpoint(xlarge only)
+    padding: 0 60px
+
 .rect-bgc
   position: absolute
   width: 0
@@ -125,11 +128,11 @@
 
 
         &:hover
-          z-index: 2
-          +transform(scale(1.1))
+          //z-index: 2
+          //+transform(scale(1.1))
 
 
-          .rect-bg
+          //.rect-bg
             +transform(scale(1.1))
 
           .shadow-wrap
