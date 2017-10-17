@@ -42,6 +42,6 @@ $document.on "click", ".sidebar-navigation .item:not(.active)", (e)->
   k = $item.attr("data-key")
   $block = $("[data-navigation-key='#{k}']")
   block_top = $block.offset().top
-  $("body").animate({scrollTop: block_top}, 400)
+  $("body,html").animate({scrollTop: block_top}, 400)
 
 
