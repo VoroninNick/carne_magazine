@@ -6,27 +6,27 @@
       .article-banner-content
         .row
           .columns
-            .article-label.appear.animated-button data-appear-top-offset=-500
+            .article-label.appear.animated-button data-appear-top-offset=-250
               .bg
               .bg2
               .content
                 |Article #{number}
             - if article.category.try(:name).present?
-              .article-category.appear data-appear-top-offset=-500
+              .article-category.appear data-appear-top-offset=-250
                 = article.category.name
-            .article-title.appear data-appear-top-offset=-500
+            .article-title.appear data-appear-top-offset=-250
               = article.name
     .article-intro-with-line.row
       .columns
-        .article-intro-line.appear data-appear-top-offset=-500
-        .article-intro.appear.fadeInUp data-appear-top-offset=-500
+        .article-intro-line.appear data-appear-top-offset=-250
+        .article-intro.appear.fadeInUp data-appear-top-offset=-300
           |The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.
 
     .row.article-content
       .columns.large-6
         .row
           .columns.large-10
-            .author.appear data-appear-top-offset=-500
+            .author.appear data-appear-top-offset=-250
               .author-image
                 img src=asset_path("author_images/1.png")
               .author-description-block
@@ -37,9 +37,9 @@
                   |Carne Luxembourg
 
             .article-content.appear-tree.fadeInUp-tree
-              h3 data-appear-top-offset=-500
+              h3 data-appear-top-offset=-250
                 |Dog
-              p data-appear-top-offset=-500
+              p data-appear-top-offset=-250
                 |The domestic dog (Canis lupus familiaris or Canis familiaris) is a member of genus Canis (canines) that forms part of the wolf-like canids, and is the most widely abundant carnivore. The dog and the extant gray wolf are sister taxa,[10][11] with modern wolves not closely related to the wolves that were first domesticated,[10][11] which implies that the direct ancestor of the dog is extinct.[12] The dog was the first domesticated species[11][13] and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.
           .columns
             .image.appear.fadeInUp
